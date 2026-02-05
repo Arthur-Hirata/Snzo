@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Snzo</title>
+</head>
+<body>
+    <nav>
+        <div class="inicio">
+            <i id="logo" class="fa-solid fa-computer"></i>
+            <h2 id="nome">Snzo</h2>
+            <div id="pesquisa">
+                <i class="fa-solid fa-search" id="lupa"></i>
+                <input type="text" placeholder="Pesquise o item que deseja" class="search">
+            </div>
+            <div class="aux">
+                <div id="caixa">
+                    <button onclick="mostrarCarrinho()" id="btn-carrinho"><a><i class="fa-solid fa-basket-shopping" id="carrinho"></i></a></button>
+                    <ul id="lista-caixa">
+                        <li id="preço-final"></li> 
+                    </ul>
+                     
+                </div>
+                <div id="fav">
+                        <button onclick="mostrarfavoritos()" id="btn-favorito"><i class="fa-solid fa-heart" id="coracao"></i></a></button>
+                        <ul id="lista">
+
+                        </ul>
+                </div>
+                <button class="login"> Log in</button>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <section>
+            <a href=""><img src="https://img.cdndsgni.com/preview/12048485.jpg" class="promocao"></a>
+        </section>
+        <section class="vender">
+            <!--<h1 class="tit">COMPRE NOSSOS PRODUTOS</h1> -->
+            <h2 id="pc-tit">Promoções em andamento</h2> 
+            <div class="pcs">
+                <div class="promo">
+                    <div class="pc">
+                        <img class="img-promo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdAdnNcPOCtSFi6XvsoFqYvYCE9y6zoBYlMw&s">
+                        <h5 class="preco-org"><s>R$ 999</s></h5>
+                        <h2 class="preco-desconto">R$ 799</h2>
+                        <p class="desc">1660 super,  I7 10400f, 16gb ram 3200mHz, gabinete Lian Li</p>
+                        <div class="pc-buttons">
+                            <button onclick="compras()"   class="adc">Adicionar ao carrinho.  <i class="fa-solid fa-basket-shopping" id="car-adc"></i></button>
+                            <button onclick="favoritar()" class="favorito"><i class="fa-regular fa-heart" id="favorito"></i></button>
+                        </div>
+                    </div>
+                    <div class="pc">
+                        <img class="img-promo" src="https://shopinfo.vteximg.com.br/arquivos/ids/1722386-1000-1000/1.png?v=638999312414270000">
+                        <h5 class="preco-org"><s>R$ 1200</s></h5>
+                        <h2 class="preco-desconto"> R$ 979</h2>
+                        <p class="desc">2080 super, I9 12900K, 32gb ram 3666mHz, gabinete Hayom</p>
+                        <div class="pc-buttons">
+                            <button onclick="compras()" class="adc">Adicionar ao carrinho.<i class="fa-solid fa-basket-shopping" id="car-adc"></i></button>
+                            <button onclick="favoritar()" class="favorito"><i class="fa-regular fa-heart" id="favorito"></i></button>
+                        </div>
+                    </div>
+                    <div class="pc">
+                        <img class="img-promo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpeW7BWkHCPVVG7oylSRvvWrVjFsXcvqUyIw&s">
+                        <h5 class="preco-org"><s>R$ 600</s></h5>
+                        <h2 class="preco-desconto"> R$ 499</h2>
+                        <p class="desc">Memória RAM 16gb FURY 3200 mHz  </p>
+                        <div class="pc-buttons">
+                            <button onclick="compras()" class="adc" style="margin-top: 45px;">Adicionar ao carrinho.  <i class="fa-solid fa-basket-shopping" id="car-adc"></i></button>
+                            <button onclick="favoritar()" class="favorito"><i class="fa-regular fa-heart" id="favorito"></i></button>
+                        </div>
+                    </div>
+                    <div class="pc">
+                        <img class="img-promo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc7FqXQPiCxtbnhRsYK3TCvZVducZZky12Xg&s">
+                        <h5 class="preco-org"><s>R$ 1500</s></h5>
+                        <h2 class="preco-desconto"> R$ 1299</h2>
+                        <p class="desc">Ryzen 5 5800g 3.8 Ghz</p>
+                        <div class="pc-buttons">
+                            <button onclick="compras()" class="adc" style="margin-top: 45px;">Adicionar ao carrinho.  <i class="fa-solid fa-basket-shopping" id="car-adc"></i></button>
+                            <button onclick="favoritar()" class="favorito"><i class="fa-regular fa-heart" id="favorito"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="products">
+            <h2 id="pc-tit">Filtre pelo tipo de item que deseja</h2>
+            <div class="escolhas">
+                <button onclick="tudo()"class="tudo" id="tudo">TODAS AS PEÇAS</button>
+                <button onclick="ram()" class="choices" id="ram">MEMÓRIAS RAM</button>
+                <button onclick="cpu()" class="choices" id="cpu">PROCESSADORES</button>
+                <button onclick="gpu()"class="choices" id="gpu">PLACAS DE VÍDEO</button>
+                <button onclick="placaMae()" class="choices" id="mthboard">PLACAS-MÃE</button>
+                <button onclick="ssd()" class="choices" id="ssd">ARMAZENAMENTO</button>
+                <button onclick="gab()" class="choices" id="gabinetes">GABINETES</button>
+            </div>
+            <div id="box">
+                <div class="filter">
+                    <h2 class="subtit">SNZO</h2>
+                    
+                    <div class="pesq">
+                        <i  class="fa-solid fa-search" id="lupe"></i>
+                        <input type="text" placeholder="Digite o item que deseja" id="input-pesquisa">
+                    </div>
+                    <div class="filtrar">
+                        <button onclick="" id="filtros">Promoção</button>
+                        <button onclick="" id="filtros">Mais comprados</button>
+                        <button onclick="" id="filtros">Custo benefício</button>
+                        <button onclick="" id="filtros">Custo benefício</button>
+                    </div>
+                    <i class="fa-solid fa-computer" id="logo-2"></i>
+                </div>
+                <hr class="line"></hr>
+                <div class="test">
+                        <div class="linha1">
+                            <div class="todos">
+                            <div class="itens" id="gtx1650">
+                            <img src="https://lojaibyte.vteximg.com.br/arquivos/ids/217543-1200-1200/placa-de-video-galax-gtx1650ex-gddr6-4gb-128-bit-65sql8ds66e6-1.jpg?v=637556556791400000" class="foto">
+                            <h4 class="price">979,99</h4>
+                            <h5 class="sub">1650 GALAX 4 GB</h5>
+                            <div class="itens-buttons">
+                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="todos">
+                            <div class="itens" id="gtx1660">
+                            <img src="https://static.gigabyte.com/StaticFile/Image/Global/c9d9388301ae1111e2c4245bcbe7e1fd/Product/23154" class="foto">
+                            <h4 class="price">1199,99</h4>
+                            <h5 class="sub">1660 GIGABYTE 6 GB</h5>
+                            <div class="itens-buttons">
+                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="todos" >
+                            <div class="itens" id="rtx2080">
+                            <img src="https://asset.msi.com/resize/image/global/product/product_0_20190726164415_5d3abd5f81774.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" class="foto">
+                            <h4 class="price">1799,99</h4>
+                            <h5 class="sub">2080 MSI 8 GB</h5>
+                            <div class="itens-buttons">
+                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="linha2">
+                        <div class="todo2" >
+                            <div class="itens"id="ram1">
+                                <img src="https://www.kingstonstore.com.br/cdn/shop/files/FuryDIMM1_65053974-4242-476f-8e50-6ccc8ede4b39.jpg?v=1712783248" class="foto">
+                                <h4 class="price">799,99</h4>
+                                <h5 class="sub"> Ram Kingston 8gb 6000 mHZ</h5>
+                                <div class="itens-buttons">
+                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                                </div>
+                            </div>
+                            <div class="itens" id="ram2">
+                                <img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/k/f/kf552c40bbak2-163.jpg" class="foto">
+                                <h4 class="price">1799,99</h4>
+                                <h5 class="sub">Ram FURY 2x8 5200mHZ</h5>
+                                <div class="itens-buttons">
+                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                                
+                                </div>
+                            </div>
+                            <div class="itens" id="ram3">
+                                <img src="https://images.kabum.com.br/produtos/fotos/630657/memoria-ram-kingston-fury-beast-rgb-32gb-2x16gb-6000mt-s-ddr5-cl30-dimm-preto-expo-kf560c30bbeak2-32_1728498148_gg.jpg" class="foto">
+                                <h4 class="price">3200,99</h4>
+                                <h5 class="sub">Ram FURY 2x16 6000mHZ</h5>
+                                <div class="itens-buttons">
+                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="linha3">
+                        <div class="todo2">
+                            <div class="itens" id="cpu1">
+                                <img src="https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/oficinadosbits/media/uploads/produtos/foto/skzpfbcc/file.png" class="foto">
+                                <h4 class="price">1599,99</h4>
+                                <h5 class="sub">i9 9900k</h5>
+                                <div class="itens-buttons">
+                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                                </div>
+                            </div>
+                            <div class="itens" id="cpu2">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQivno3R2ZdXiCZH9UNCNMb_Q1KkRbOE0nLBA&s" alt="" class="foto">
+                                <h4 class="price">699,99</h4>
+                                <h5 class="sub">i5 10400F</h5>
+                                <div class="itens-buttons">
+                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                                </div>
+                            </div>
+                            <div class="itens" id="cpu3">
+                                <img src="https://www.amd.com/content/dam/amd/en/images/products/processors/ryzen/3021650-ryzen-9-9900x3d-product.jpg" alt="" class="foto">
+                                <h4 class="price">1899,99</h4>
+                                <h5 class="sub">RYZEN 9 9950X 3D</h5>
+                                <div class="itens-buttons">
+                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="linha4">
+                        <div class="todo2">
+                            <div class="itensa">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8S4Hfvi4F1AUMw6LO-2rJTO8qRLCmo5ESCQ&s" alt="" class="foto">
+                                <h4 class="price">999,99</h4>
+                                <h5 class="sub"> Placa mãe B550M ASUS TUF</h5>
+                                <div class="itens-buttons">
+                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora2"></i></button>
+                                </div>
+                            </div>
+                            <div class="itensa">
+                                <img src=https://dlcdnwebimgs.asus.com/gain/8251b997-bda9-4df2-a9ba-16fd37aa27ff/"" alt="" class="foto">
+                                <h4 class="price">599,99</h4>
+                                <h5 class="sub">Placa mãe H510M</h5>
+                                <div class="itens-buttons">
+                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora2"></i></button>
+                                </div>
+                            </div>
+                            <div class="itensa">
+                                <img src="https://m.media-amazon.com/images/I/71ybJIispVL._AC_UF894,1000_QL80_.jpg" alt="" class="foto">
+                                <h4 class="price">Placa mãe Z790 AORUS ELITE </h4>
+                                <h5 class="sub">1599,99</h5>
+                                <div class="itens-buttons">
+                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora2"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="linha5">
+                        <div class="todo2">
+                            <div class="itens">
+                                <img src="https://m.media-amazon.com/images/I/71ybJIispVL._AC_UF894,1000_QL80_.jpg" alt="" class="foto">
+                                <h4 class="price">Placa mãe Z790 AORUS ELITE </h4>
+                                <h5 class="sub">1599,99</h5>
+                                <div class="itens-buttons">
+                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora2"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        
+    </main>
+</body>
+<script src="/src/js/script.js"></script>
+</html> 
