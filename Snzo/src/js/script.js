@@ -10,12 +10,25 @@ $(document).ready(function(){
         distance : '20%'
 
      })
-      ScrollReveal().reveal('.itens', {
+      ScrollReveal().reveal('.placa', {
         origin : 'left',
         duration : 2000,
         distance : '20%'
 
      })
+     ScrollReveal().reveal('.comentarios', {
+        origin : 'left',
+        duration : 2000,
+        distance : '20%'
+
+     })
+     ScrollReveal().reveal('.merchan', {
+        origin : 'rigth',
+        duration : 2000,
+        distance : '30%'
+
+     })
+
 })
 
 var listaCompras = document.getElementById("lista-caixa")
@@ -85,6 +98,21 @@ var ram3 = document.getElementById("ram3")
 var cpu1 = document.getElementById("cpu1")
 var cpu2 = document.getElementById("cpu2")
 var cpu3 = document.getElementById("cpu3")
+var placa1 = document.getElementById("placa1")
+var placa2 = document.getElementById("placa2")
+var placa3 = document.getElementById("placa3")
+var ssd1 = document.getElementById("arm1")
+var ssd2 = document.getElementById("arm2")
+var ssd3 = document.getElementById("arm3")
+var gab1 = document.getElementById("gab1")
+var gab2 = document.getElementById("gab2")
+var gab3 = document.getElementById("gab3")
+
+
+
+
+
+
 
 
 
@@ -102,6 +130,16 @@ botaoTudo.addEventListener("click", function(){
     ram1.style.display = "block"
     ram2.style.display ="block"
     ram3.style.display = "block"
+    placa1.style.display ="block"
+    placa2.style.display ="block"
+    placa3.style.display ="block"
+    ssd1.style.display ="block"
+    ssd2.style.display ="block"
+    ssd3.style.display ="block"
+    gab1.style.display ="block"
+    gab2.style.display ="block"
+    gab3.style.display ="block"
+
 
 
 })
@@ -122,9 +160,18 @@ botaoRam.addEventListener("click", function(){
     cpu1.style.display =" none"
     cpu2.style.display =" none"
     cpu3.style.display =" none"
-    cpu1.style.display =" block"
-    cpu2.style.display =" block"
-    cpu3.style.display =" block"
+    cpu1.style.display =" none"
+    cpu2.style.display =" none"
+    cpu3.style.display =" none"
+    placa1.style.display ="none"
+    placa2.style.display ="none"
+    placa3.style.display ="none"
+    ssd1.style.display ="none"
+    ssd2.style.display ="none"
+    ssd3.style.display ="none"
+    gab1.style.display ="none"
+    gab2.style.display ="none"
+    gab3.style.display ="none"
  
 })
 botaoCpu.addEventListener("click", function(){
@@ -144,6 +191,15 @@ botaoCpu.addEventListener("click", function(){
     cpu1.style.display =" block"
     cpu2.style.display =" block"
     cpu3.style.display =" block"
+    placa1.style.display ="none"
+    placa2.style.display ="none"
+    placa3.style.display ="none"
+    ssd1.style.display ="none"
+    ssd2.style.display ="none"
+    ssd3.style.display ="none"
+    gab1.style.display ="none"
+    gab2.style.display ="none"
+    gab3.style.display ="none"
 
 })
 botaoGpu.addEventListener("click", function(){
@@ -163,6 +219,15 @@ botaoGpu.addEventListener("click", function(){
     cpu1.style.display =" none"
     cpu2.style.display =" none"
     cpu3.style.display =" none"
+    placa1.style.display ="none"
+    placa2.style.display ="none"
+    placa3.style.display ="none"
+    ssd1.style.display ="none"
+    ssd2.style.display ="none"
+    ssd3.style.display ="none"
+    gab1.style.display ="none"
+    gab2.style.display ="none"
+    gab3.style.display ="none"
 
 })
 botaoplacaMae.addEventListener("click", function(){
@@ -182,6 +247,15 @@ botaoplacaMae.addEventListener("click", function(){
     cpu1.style.display =" none"
     cpu2.style.display =" none"
     cpu3.style.display =" none"
+    placa1.style.display ="block"
+    placa2.style.display ="block"
+    placa3.style.display ="block"
+    ssd1.style.display ="none"
+    ssd2.style.display ="none"
+    ssd3.style.display ="none"
+    gab1.style.display ="none"
+    gab2.style.display ="none"
+    gab3.style.display ="none"
 
 })
 botaoArmazenamento.addEventListener("click", function(){
@@ -201,6 +275,15 @@ botaoArmazenamento.addEventListener("click", function(){
     cpu1.style.display =" none"
     cpu2.style.display =" none"
     cpu3.style.display =" none"
+    placa1.style.display ="none"
+    placa2.style.display ="none"
+    placa3.style.display ="none"
+    ssd1.style.display ="block"
+    ssd2.style.display ="block"
+    ssd3.style.display ="block"
+    gab1.style.display ="none"
+    gab2.style.display ="none"
+    gab3.style.display ="none"
 
 })
 botaoGabinete.addEventListener("click", function(){
@@ -220,6 +303,15 @@ botaoGabinete.addEventListener("click", function(){
     cpu1.style.display =" none"
     cpu2.style.display =" none"
     cpu3.style.display =" none"
+    placa1.style.display ="none"
+    placa2.style.display ="none"
+    placa3.style.display ="none"
+    ssd1.style.display ="none"
+    ssd2.style.display ="none"
+    ssd3.style.display ="none"
+    gab1.style.display ="block"
+    gab2.style.display ="block"
+    gab3.style.display ="block"
 
 })
 

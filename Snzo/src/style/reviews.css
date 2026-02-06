@@ -1,0 +1,64 @@
+.avs{
+    display: flex;
+    flex-direction: row;
+}
+.comentarios{
+    margin-left: 70px;
+    margin-top: 20px;
+    
+}
+.comentario{
+    width: 600px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.3);
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.foto-perfil{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+.nome{
+    margin-left: 40px;
+    margin-top: 14px;
+    
+}
+.texto{
+    display: flex;
+    flex-direction: column;
+}
+.review{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.estrelas{
+    margin-left: 340px;
+    background-color: black;
+    border-radius: 10px;
+    margin-right: 10px;
+    position: absolute;
+    margin-top: 110px;
+}
+#star{
+    flex-direction: row;
+    color: yellow;
+    margin-bottom: 0px;
+    
+}
+.merchan{
+    margin-left: 200px;
+    margin-top: 100px;
+}
+#comp{
+    font-size: 300px;
+}
+#empresa{
+    font-size: 120px;
+    justify-content: center;
+}
