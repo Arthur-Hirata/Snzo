@@ -33,7 +33,7 @@
                         </ul>
                 </div>
                 <button class="login"> Log in</button>
-            </div>
+             </div>
         </div>
     </nav>
     
@@ -41,6 +41,10 @@
         <section>
             <a href=""><img src="https://img.cdndsgni.com/preview/12048485.jpg" class="promocao"></a>
         </section>
+        <div class="pesquisa-responsiva">
+            <i class="fa-solid fa-search" id="lupa"></i>
+            <input type="text" placeholder="Pesquise o item que deseja" class="search">
+        </div>
         <section class="vender">
             <!--<h1 class="tit">COMPRE NOSSOS PRODUTOS</h1> -->
             <h2 id="pc-tit">Promoções em andamento</h2> 
@@ -112,21 +116,21 @@
                         <button onclick="" id="filtros">Promoção</button>
                         <button onclick="" id="filtros">Mais comprados</button>
                         <button onclick="" id="filtros">Custo benefício</button>
-                        <button onclick="" id="filtros">Custo benefício</button>
+                        <button onclick="" id="filtros">Menor preço</button>
                     </div>
                     <i class="fa-solid fa-computer" id="logo-2"></i>
                 </div>
                 <hr class="line"></hr>
                 <div class="test">
-                        <div class="linha1">
-                            <div class="todos">
+                    <div class="linha1">
+                         <div class="todos">
                             <div class="itens" id="gtx1650">
                             <img src="https://lojaibyte.vteximg.com.br/arquivos/ids/217543-1200-1200/placa-de-video-galax-gtx1650ex-gddr6-4gb-128-bit-65sql8ds66e6-1.jpg?v=637556556791400000" class="foto">
                             <h4 class="price">979,99</h4>
                             <h5 class="sub">1650 GALAX 4 GB</h5>
                             <div class="itens-buttons">
-                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
-                                <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                                <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                <button onclick="adicionarFavoritos()" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                             </div>
                             </div>
                         </div>
@@ -136,7 +140,7 @@
                             <h4 class="price">1199,99</h4>
                             <h5 class="sub">1660 GIGABYTE 6 GB</h5>
                             <div class="itens-buttons">
-                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                     <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                             </div>
                             </div>
@@ -147,8 +151,8 @@
                             <h4 class="price">1799,99</h4>
                             <h5 class="sub">2080 MSI 8 GB</h5>
                             <div class="itens-buttons">
-                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
-                                    <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
+                                <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                             </div>
                             </div>
                         </div>
@@ -161,7 +165,7 @@
                                 <h4 class="price">799,99</h4>
                                 <h5 class="sub"> Ram Kingston 8gb 6000 mHZ</h5>
                                 <div class="itens-buttons">
-                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                     <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                                 </div>
                             </div>
@@ -170,7 +174,7 @@
                                 <h4 class="price">1799,99</h4>
                                 <h5 class="sub">Ram FURY 2x8 5200mHZ</h5>
                                 <div class="itens-buttons">
-                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                     <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                                 
                                 </div>
@@ -180,7 +184,7 @@
                                 <h4 class="price">3200,99</h4>
                                 <h5 class="sub">Ram FURY 2x16 6000mHZ</h5>
                                 <div class="itens-buttons">
-                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                     <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                                 </div>
                             </div>
@@ -193,7 +197,7 @@
                                 <h4 class="price">1599,99</h4>
                                 <h5 class="sub">i9 9900k</h5>
                                 <div class="itens-buttons">
-                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick= "adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                         <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                                 </div>
                             </div>
@@ -202,7 +206,7 @@
                                 <h4 class="price">699,99</h4>
                                 <h5 class="sub">i5 10400F</h5>
                                 <div class="itens-buttons">
-                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                         <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                                 </div>
                             </div>
@@ -211,7 +215,7 @@
                                 <h4 class="price">1899,99</h4>
                                 <h5 class="sub">RYZEN 9 9950X 3D</h5>
                                 <div class="itens-buttons">
-                                        <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                        <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                         <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                                 </div>
                             </div>
@@ -224,7 +228,7 @@
                                     <h4 class="price">599,99</h4>
                                     <h5 class="sub">Placa mãe H510M</h5>
                                     <div class="itens-buttons">
-                                            <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                            <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                             <button onclick="" class="like"><i class="fa-regular fa-heart" id="cora"></i></button>
                                     </div>
                             </div>
@@ -233,7 +237,7 @@
                                     <h4 class="price">1999,99</h4>
                                     <h5 class="sub">Placa mãe Z790 ASUS</h5>
                                     <div class="itens-buttons">
-                                            <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                            <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                             <button class="like" onclick=""><i class="fa-regular fa-heart" id="cora"></i></button>
                                     </div>
                             </div>
@@ -242,7 +246,7 @@
                                     <h4 class="price">499,99</h4>
                                     <h5 class="sub">Placa mãe B550 GYGABYTE</h5>
                                     <div class="itens-buttons">
-                                            <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                            <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                             <button class="like" onclick=""><i class="fa-regular fa-heart" id="cora"></i></button>   
                                     </div>
                             </div>
@@ -254,7 +258,7 @@
                             <h4 class="price">1099,99</h4>
                             <h5 class="sub">Nvme 1TB Kingston</h5>
                             <div class="itens-buttons">
-                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                 <button class="like" onclick=""><i class="fa-regular fa-heart" id="cora"></i></button>   
                             </div>
                         </div>
@@ -263,7 +267,7 @@
                             <h4 class="price">512,99</h4>
                             <h5 class="sub">SSD Kingston 480GB</h5>
                             <div class="itens-buttons">
-                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                 <button class="like" onclick=""><i class="fa-regular fa-heart" id="cora"></i></button>   
                             </div>
                         </div>
@@ -272,19 +276,18 @@
                             <h4 class="price">359,99</h4>
                             <h5 class="sub"> HD 1TB WD</h5>
                             <div class="itens-buttons">
-                                <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                <button onclick="adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                 <button class="like" onclick=""><i class="fa-regular fa-heart" id="cora"></i></button>   
                             </div>
                         </div>
                     </div>
                     <div class="linha6">
-                        
                             <div class="itens" id="gab1">
                                 <img src="https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/oficinadosbits/media/uploads/produtos/foto/csyrqiha/file.png" class="foto">
                                 <h4 class="price">899,99</h4>
                                 <h5 class="sub">Gabinete Lian Li o11 dynamic</h5>
                                 <div class="itens-buttons">
-                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick= "adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                     <button class="like" onclick=""><i class="fa-regular fa-heart" id="cora"></i></button>   
                                 </div>
                             </div>
@@ -293,7 +296,7 @@
                                 <h4 class="price">399,99</h4>
                                 <h5 class="sub">Gabinete Hayom gb1796</h5>
                                 <div class="itens-buttons">
-                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick= "adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                     <button class="like" onclick=""><i class="fa-regular fa-heart" id="cora"></i></button>   
                                 </div>
                             </div>
@@ -302,7 +305,7 @@
                                 <h4 class="price">299,99</h4>
                                 <h5 class="sub"> Gabinete mini ITX </h5>
                                 <div class="itens-buttons">
-                                    <button onclick= ""class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
+                                    <button onclick= "adicionarCarrinho()"class="carrin">Adicionar ao carrinho<i class="fa-solid fa-basket-shopping" id="mini-adc"></i></button>
                                     <button class="like" onclick=""><i class="fa-regular fa-heart" id="cora"></i></button>   
                                 </div>
                             </div>
@@ -312,7 +315,7 @@
                 </div>
         </section>
         <section class="avaliaçoes">
-            <h2 class="tit">Avaliações dos nosso compradores</h2>
+            <h2 class="tit" style="margin-top: 20px;">Avaliações dos nosso compradores</h2>
             <div class="avs">
                 <div class="comentarios">
                     <div class="comentario">

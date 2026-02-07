@@ -169,3 +169,11 @@
     box-shadow: 0px 0px 12px 4px rgba(0,0,0,0,6);
     border: 1px solid black;
 }
+
+/* IMPLEMENTANDO RESPONSIVIDADE */
+@media screen and (max-width:600px) {
+    .promo{
+        flex-direction: column;
+    }
+    
+}

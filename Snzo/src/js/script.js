@@ -54,6 +54,25 @@ function compras(){
         })
     })
 }
+function adicionarCarrinho(){
+    document.querySelectorAll(".carrin").forEach((btn) =>{
+        btn.addEventListener("click", ()=>{
+            const product = btn.closest(".itens")
+            const sobre = product.querySelector(".sub").innerText;
+            const jaExiste = Array.from(listaCompras.children)
+                .some(li => li.textContent === (sobre))
+
+            if (!jaExiste){
+                const li = document.createElement("li")
+                li.textContent = sobre;
+                listaCompras.appendChild(li)
+
+            
+            }
+
+        })
+    })
+}
 function mostrarCarrinho(){
     listaCompras.style.display = "block";
 }
@@ -78,6 +97,25 @@ function favoritar(){
         })
     })
 }
+function adicionarFavoritos(){
+    document.querySelectorAll(".like").forEach((btn)=>{
+        btn.addEventListener("click" , ()=>{
+            const produtc =btn.closest(".itens");
+            const sobre = produtc.querySelector(".sub").innerText;
+
+            const jaExiste = Array.from(listaFavoritos.children)
+                .some(li => li.textContent === (sobre))
+
+            if (!jaExiste){
+                const li = document.createElement("li")
+                li.textContent = sobre;
+                listaFavoritos.appendChild(li)
+            }
+        })
+    })
+}
+
+
 function mostrarfavoritos(){
     listaFavoritos.style.display = "block";
 }
