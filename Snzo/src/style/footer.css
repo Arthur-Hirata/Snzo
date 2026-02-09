@@ -60,3 +60,31 @@ footer{
     font-size: 30px;
     margin-top: 20px;
 }
+/* IMPLEMENTANDO RESPONSIVIDADE */
+@media screen and (max-width:600px) {
+    .sac-tit{
+        margin-left: 10px;
+    }
+    #sac{
+        margin-left: -25px;
+    }
+    #numero{
+        display: none;
+    }
+    #mail{
+        display: none;
+    }
+    #email{
+        margin-left: -15px;
+        margin-top: 10px;
+    }
+    #logo-final{
+        margin-left: 85px;
+        margin-top: 14px;
+    }
+    .criador{
+        margin-left: 25px;
+        font-size: 25px;
+        margin-top: 30px;
+    }
+}

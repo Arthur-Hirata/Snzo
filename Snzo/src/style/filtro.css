@@ -153,8 +153,6 @@
     height: auto;
     overflow-y: auto;
     flex-direction: column;
-    
-
 }
 .linha1{
     display: flex;
@@ -256,105 +254,8 @@
     display: flex;
     flex-direction: row;
 }
-.linha1{
-    display: flex;
-    flex-direction: row;
-}
-.linha2{
-    position: relative;
-    margin-left: 0px;
-    margin-top: 0px;
-}
-.todos{
-    display: flex;
-    flex-direction: row;
-}
-.todo2{
-    display: flex;
-    flex-direction: row;
-    
-}
-.itens{
-    width: 260px;
-    height: 230px;
-    background-color: white;
-    margin-left: 27px;
-    margin-top: 40px;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: block;
-}
-.foto{
-    width: 150px;
-    height: 120px;
-    margin-left: 50px;
-    margin-top: 4px;
-}
-.price{
-    text-align: right;
-    margin-right: 5px;
-    color: red;
-}
-.sub{
-    text-align: center;
-}
-.carrin{
-    background-color: black;
-    color: white;
-    border: none;
-    width: 200px;
-    height: 30px;
-    border-radius: 10px;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-#mini-adc{
-    color: yellow;
-    margin-left: 5px;
-    font-size: 15px;
-}
-.like{
-    background-color: white;
-    border: none;
-    outline: none;
-    position: absolute;
-    padding-top: 13px;
-    margin-left: 5px;
-}
-#cora{
-    color: red;
-    font-size: 22px;
-}
-#placa{
-    display: flex;
-    flex-direction: row;
-}
-.lns{
-    display: flex;
-}
-.placa{
-    width: 260px;
-    height: 230px;
-    background-color: white;
-    margin-left: 27px;
-    margin-top: 40px;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: block;
-}
-#aviso{
-    color: red;
-    text-align: center;
-    justify-content: end;
-    margin-top: 40px;
-}
-.linha5{
-    display: flex;
-    flex-direction: row;
-}
-.linha6{
-    display: flex;
-    flex-direction: row;
+#aviso-moveis{
+    display: none;
 }
 /* IMPLEMENTANDO RESPONSIVIDADE */
 @media screen and (max-width : 900px) {
@@ -371,6 +272,12 @@
     .escolhas button{
         flex: 1 1 20%;
     }
+    .choices{
+        font-size: 10px;
+    }
+    .tudo{
+        font-size: 10px;
+    }
     .nao-clicado{
         font-size: 10px;
     }
@@ -378,11 +285,52 @@
         font-size: 10px;
     }
     .filter{
+        display: block;
+        flex-direction: column;
+    }
+    .subtit{
+        font-size: 30px;
+        margin-top: 0px;
+    }
+    .filtrar{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    #filtros{
+        width: 100px;
+        font-size: 13px;
+        margin-top: 00px;
+        
+    }
+    #logo-2{
         display: none;
     }
     #box{
-        width: 300px;
-        
-        
+        width: 310px;
+        margin-left: 40px;
+        flex-direction: column;
+        height: 1200px;
+        overflow-x: none;
+        max-width: 310px;
     }
+    .linha1{
+        flex-direction: column;
+    }
+    .todo2{
+        flex-direction: column;
+    }
+    .linha5{
+        flex-direction: column;
+    }
+    .linha6{
+        flex-direction: column;
+    }
+    #aviso-moveis{
+    color: red;
+    text-align: center;
+    justify-content: end;
+    margin-top: 20px;
+    }
+    
 }
