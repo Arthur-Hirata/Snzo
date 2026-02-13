@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+body{
+        background-color: rgb(240, 239, 237);
+
+}
+.box{
+    background-color: white;
+    width: 500px;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px 4px rgba(0,0, 0, 0.1);
+    margin-left: 440px;
+    margin-top: 70px;
+    border: 1px solid gray;
+    
+    
+}
+.tit{
+    text-align: center;
+    margin-top: 20px;
+}
+.caixa{
+    display: flex;
+    flex-direction: row;
+    margin-left:40px;
+    
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+}
+input[type="text"],
+input[type="password"]{
+    outline: none;
+    width: 250px;
+    height: 25px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    box-shadow: 0px 0px 12px 4px rgba(0,0, 0, 0.1);
+    border: 1px solid gray;
+    margin-top: 15px;
+}
+
+
+.lembrar{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    user-select: none;
+    transform: translate(-50%, -50%);
+    margin-left: 90px;
+}
+input[type="checkbox"]{
+    position: relative;
+    width: 45px;
+    height: 24px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 20px;
+    background-color: #c6c6c6;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0 , 0.2) inset;
+}
+input:checked[type="checkbox"]{
+    background: #17c01783;
+
+}
+input[type="checkbox"]::before{
+    content: '';
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: scale(1.2);
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0 , 0, 0.2);
+    transition: .5s;
+    cursor: pointer;
+}
+input:checked[type="checkbox"]::before{
+    left: 22px;
+}
+#continuar{
+    margin-left: 20px;
+}
+#senha-tit{
+    margin-top: 30px;
+}
+.pt2{
+    margin-left: 40px;
+    margin-top: 10px;
+
+}
+.merchan{
+    margin-top: 30px;
+    padding-left: 36px;
+    font-size: 100px;
+}
+.nome{
+    font-size: 60px;
+    margin-left: -15px;
+}
+.criar{
+    text-decoration: none;
+    color: dodgerblue;
+}
+.entrar{
+    background-color: black;
+    color: white;
+    width: 300px;
+    height: 50px;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 60px;
+    font-size: 25px;
+}
+.entrar:hover{
+    transform: scale(1.05);
+}
+.mostrar{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: -30px;
+}

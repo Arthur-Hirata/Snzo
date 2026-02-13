@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style/login.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Login-Snzo</title>
+</head>
+<body>
+    <div class="box">
+        <h1 class="tit">LOGIN</h1>
+        <div class="caixa">
+            <div class="inputs">
+                <h3>Email</h3>
+                <input type="text" class="email" placeholder="Insira seu e-mail...">
+                <h3 id="senha-tit">Senha</h3>
+                <div id="pass">
+                    <input type="password" placeholder="Insira sua senha..." id="senha">
+                    <button class="mostrar" onclick="showPassword()"><i class="fas fa-eye" id="eye"></i></button>
+                </div>
+                <div class="lembrar">
+                    <input type="checkbox" class="checkbox">
+                    <h5 id="continuar">Lembrar de mim.</h5>
+                </div>
+            </div>
+            <div class="merchan">
+                <i class="fa-solid fa-computer" id="pc-logo"></i>
+                <p class="nome">SNZO</p>
+            </div>
+        </div>
+        <div class="pt2">
+            <a href="/criarConta.html" class="criar"><h5>Não tem uma conta? Crie agora.</h5></a>
+            <button class="entrar">ENTRAR</button>
+
+        </div>
+        
+    </div> 
+</body>
+<script src="/src/js/login.js">
+</script>
+</html>

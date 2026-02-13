@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style/criaracc.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Criar Conta - Snzo</title>
+</head>
+<body>
+    <div class="box">
+        <h1 class="tit">Crie Sua Conta</h1>
+        <div class="caixa">
+            <div class="inputs">
+                <h2 class="subtit">Email</h2>
+                <h5 id="erro">Insira um e-mail válido</h5>
+                <input type="text"  id="email" placeholder="Digite seu e-mail...">
+                <h2 class="subtit">Senha</h2>
+                <h5 id="erro2">Sua senha deve conter ao menos 8 caracteres</h5>
+                <div class="senha">
+                    <input type="password" id="senha" placeholder="Insira sua senha ..">
+                    <button id="conf" onclick="mostarSenha()"><i class="fas fa-eye" id="olho"></i></button>
+                </div>
+                <h2 class="subtit">Confirme sua senha</h2>
+                <h5 id="erro3">Senha incorreta</h5>
+                <div class="senha">
+                    <input type="password" id="confirmar" placeholder="Insira sua senha...">
+                    <button id="conf" onclick="mostrarConfimação()"><i class="fas fa-eye" id="olho2"></i></button>
+                </div>
+            </div>
+            <i class="fa-solid fa-computer" id="comp"></i>
+        </div>
+        <div class="metodos">
+            <h3>Outros metodos de login</h3>
+            <div class="options">
+                <button class="btn-logar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3XWXUMPUUIiMCEK74rNCsTP0Yk8YojgeqNw&s" class="opcao"></button>
+                <button class="btn-logar"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" class="opcao"></button>
+                <button class="btn-logar"><img src="https://cdn-icons-png.flaticon.com/512/0/747.png" class="opcao"></button>
+
+            </div>
+        </div>
+        <a><button class="btn-criar" onclick="criarConta()">Criar Conta</button></a>
+    </div>
+    
+</body>
+<script src="/src/js/criaracc.js"></script>
+</html>

@@ -101,14 +101,14 @@ function adicionarFavoritos(){
     document.querySelectorAll(".like").forEach((btn)=>{
         btn.addEventListener("click" , ()=>{
             const produtc =btn.closest(".itens");
-            const sobre = produtc.querySelector(".sub").innerText;
+            const abt = produtc.querySelector(".sub").innerText;
 
             const jaExiste = Array.from(listaFavoritos.children)
-                .some(li => li.textContent === (sobre))
+                .some(li => li.textContent === (abt))
 
             if (!jaExiste){
                 const li = document.createElement("li")
-                li.textContent = sobre;
+                li.textContent = abt;
                 listaFavoritos.appendChild(li)
             }
         })
@@ -351,6 +351,18 @@ botaoGabinete.addEventListener("click", function(){
     gab2.style.display ="block"
     gab3.style.display ="block"
 
+})
+
+
+const input = document.getElementById("input-pesquisa")
+input.addEventListener("keyup", function(){
+    const filtro = input.valeu.toLowerCase()
+    const itens = document.querySelectorAll(".test .itens .sub")
+    itens.forEach(item =>{
+        item.style.display = item.textContent
+            .toLowerCase()
+            .includes(filtro) ? "" : "none";
+    })
 })
 
 
