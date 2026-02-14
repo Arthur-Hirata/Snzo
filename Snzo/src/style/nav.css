@@ -129,7 +129,7 @@ button:hover{
 }
 /* IMPLEMENTANDO RESPONSIVIDADE */
 
-@media screen and (max-width: 600px){
+@media screen and (min-width:300px) and (max-width: 399px){
     nav{
         padding-top: 0px;
         position: static;
@@ -161,7 +161,7 @@ button:hover{
     .aux{
         display: flex;
         flex-direction: row;
-        margin-left: 20px;
+        margin-left: 100px;
         margin-top: 35px;
         gap:50px
     }
@@ -173,9 +173,93 @@ button:hover{
     }
     .pesquisa-responsiva{
         display: block;
-        margin-left: 50px;
+        margin-left:50px;
         border-radius: 10px;
-        width: 265px;
+        width: 305px;
+        flex-direction: row;
+        height: 30px;
+        background-color: white;
+        margin-top: 20px;
+        z-index: 1;
+        
+        
+    }
+    .pesquisa-responsiva .search{
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 35px;
+        
+    }
+    .pesquisa-responsiva #lupa{
+        position: absolute;
+        margin-top: 7px;
+        border-radius: 10px;
+    }
+    .login{
+        margin-left: -20px;
+        width: 70px;
+    }
+    ul {
+        position: absolute;
+        z-index: 2;
+    }
+    #lista-caixa{
+        margin-left: -80px;
+    }
+    #lista{
+        margin-left: -10px;
+    }
+    .promocao{
+        display: none;
+    }
+}
+@media screen and (min-width:400px) and (max-width:749px) {
+    nav{
+        padding-top: 0px;
+        position: static;
+        width: 100%;
+    }
+    
+    #logo{
+        font-size: 25px;
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+    #nome{
+        display: block;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    #pesquisa{
+        margin-left: 50px;
+        width: 200px;
+        font-size: 10px;
+        height: 40px;
+        margin-top: 20px;
+        display: none;
+    }
+    .search{
+        font-size: 12px;
+        margin-top: 7px;
+    }
+    .aux{
+        display: flex;
+        flex-direction: row;
+        margin-left: 100px;
+        margin-top: 35px;
+        gap:50px
+    }
+    #carrinho{
+        font-size: 20px;
+    }
+    #coracao{
+        font-size: 20px;
+    }
+    .pesquisa-responsiva{
+        display: block;
+        margin-left: 60px;
+        border-radius: 10px;
+        width: 305px;
         flex-direction: row;
         height: 30px;
         background-color: white;
@@ -194,8 +278,7 @@ button:hover{
         border-radius: 10px;
     }
     .login{
-        position: absolute;
-        margin-left: 160px;
+        margin-left: -20px;
         width: 70px;
     }
     ul {
@@ -210,5 +293,66 @@ button:hover{
     }
     .promocao{
         display: none;
+    }
+}
+@media screen and (max-width:900px){
+   nav{
+        padding-top: 0px;
+        position: static;
+        width: 100%;
+    }
+    
+    #logo{
+        font-size: 25px;
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+    #nome{
+        display: block;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    #pesquisa{
+        position: relative;
+        margin-left: 140px;
+    }
+    
+    .aux{
+        display: flex;
+        flex-direction: row;
+        margin-left: 50px;
+        margin-top: 35px;
+        gap:50px
+    }
+    #carrinho{
+        font-size: 20px;
+    }
+    #coracao{
+        font-size: 20px;
+    }
+    
+
+    .login{
+        margin-left: -20px;
+        width: 70px;
+    }
+    ul {
+        position: absolute;
+        z-index: 2;
+    }
+    #lista-caixa{
+        margin-left: -80px;
+    }
+    #lista{
+        margin-left: -10px;
+    }
+    
+}
+@media screen and (max-width:799px){
+    #pesquisa{
+        margin-left: 65px;
+    }
+    .aux{
+        margin-left: 40px;
     }
 }
