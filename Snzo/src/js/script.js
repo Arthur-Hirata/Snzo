@@ -37,18 +37,35 @@ function compras(){
     document.querySelectorAll(".adc").forEach((btn) =>{
         btn.addEventListener("click", () =>{
             const item = btn.closest(".pc")
-            const desc = item.querySelector(".desc").innerText;
+            const desc = item.querySelector(".desc").innerText.trim();
            
             
             
-            const jaExiste = Array.from(listaCompras.children)
-                .some(li => li.textContent === (desc))
+            const jaExiste = Array.from(listaCompras.querySelectorAll("span"))
+                .some(span => span.textContent.trim() === (desc))
             
             if (!jaExiste){
                 const li = document.createElement("li")
-                li.textContent = desc;
+                const spanTexto = document.createElement("span")
+                const remover = document.createElement("button")
+                li.style.display = "flex"
+                li.style.alignItems = "center"
+                li.style.justifyContent = "space-between"
+                remover.className = "btn-remover"
+                remover.style.marginTop = "10px";
+                remover.textContent = "X"
+                spanTexto.textContent = desc;
+                // TAVA DANDO ERRO PQ O CLIENT LIA COMO SE FOSSE PRODUTOX POR CAUSA DO BOTÃO,
+                // AGORA TEM UM SPAN NO MEIO, ficando <span>texto</span> <button>
+                
+                li.appendChild(spanTexto)
+                li.appendChild(remover)
+                remover.addEventListener("click", function(){
+                    listaCompras.removeChild(li)
+                })
+                li.style.marginBottom = "10px";
                 listaCompras.appendChild(li)
-
+                
             
             }
         })
@@ -58,23 +75,40 @@ function adicionarCarrinho(){
     document.querySelectorAll(".carrin").forEach((btn) =>{
         btn.addEventListener("click", ()=>{
             const product = btn.closest(".itens")
-            const sobre = product.querySelector(".sub").innerText;
-            const jaExiste = Array.from(listaCompras.children)
-                .some(li => li.textContent === (sobre))
+            const sobre = product.querySelector(".sub").innerText.trim();
+
+            const jaExiste = Array.from(listaCompras.querySelectorAll("span"))
+                .some(span => span.textContent.trim() === (sobre))
+
 
             if (!jaExiste){
                 const li = document.createElement("li")
-                li.textContent = sobre;
-                listaCompras.appendChild(li)
+                const spanTexto = document.createElement("span")
+                const remover = document.createElement("button")
+                li.style.display = "flex"
+                li.style.alignItems = "center"
+                li.style.justifyContent = "space-between"
+                remover.className = "btn-remover"
+                remover.style.marginTop = "10px";
+                remover.textContent = "X"
+                li.style.marginBottom = "10px";
+                spanTexto.textContent = sobre;
+                li.appendChild(spanTexto)
+                li.appendChild(remover)
+                remover.addEventListener("click", function(){
+                    listaCompras.removeChild(li)
+                })
+                
 
             
+                listaCompras.appendChild(li)
             }
-
         })
     })
 }
 function mostrarCarrinho(){
-    listaCompras.style.display = "block";
+    listaCompras.style.display = "block"
+    listaFavoritos.style.display = "none"
 }
 
 var listaFavoritos = document.getElementById("lista")
@@ -91,8 +125,9 @@ function favoritar(){
             if (!jaExiste){
                 const li = document.createElement("li")
                 li.textContent = desc;
+                
                 listaFavoritos.appendChild(li)
-
+                
             }
         })
     })
@@ -118,6 +153,7 @@ function adicionarFavoritos(){
 
 function mostrarfavoritos(){
     listaFavoritos.style.display = "block";
+    listaCompras.style.display = "none";
 }
 var botaoRam= document.getElementById("ram")
 var botaoTudo = document.getElementById('tudo')

@@ -62,7 +62,7 @@
     font-size: 120px;
     justify-content: center;
 }
-@media screen and (max-width:600px) {
+@media screen and (min-width:300px) and (max-width:600px) {
     .comentario{
         width: 220px;
         margin-left: -50px;
