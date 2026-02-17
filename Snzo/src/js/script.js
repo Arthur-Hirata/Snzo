@@ -36,11 +36,12 @@ var listaCompras = document.getElementById("lista-caixa")
 function compras(){
     document.querySelectorAll(".adc").forEach((btn) =>{
         btn.addEventListener("click", () =>{
-            const item = btn.closest(".pc")
+            var item = btn.closest(".pc")
             const desc = item.querySelector(".desc").innerText.trim();
-           
+            const price = item.querySelector(".preco-desconto").innerText;
             
-            
+
+
             const jaExiste = Array.from(listaCompras.querySelectorAll("span"))
                 .some(span => span.textContent.trim() === (desc))
             
@@ -48,22 +49,31 @@ function compras(){
                 const li = document.createElement("li")
                 const spanTexto = document.createElement("span")
                 const remover = document.createElement("button")
+                
                 li.style.display = "flex"
                 li.style.alignItems = "center"
                 li.style.justifyContent = "space-between"
                 remover.className = "btn-remover"
-                remover.style.marginTop = "10px";
+                
                 remover.textContent = "X"
                 spanTexto.textContent = desc;
                 // TAVA DANDO ERRO PQ O CLIENT LIA COMO SE FOSSE PRODUTOX POR CAUSA DO BOTÃO,
                 // AGORA TEM UM SPAN NO MEIO, ficando <span>texto</span> <button>
-                
+                remover.style.marginLeft = "160px"
+                remover.style.marginTop = "14px"
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
                 remover.addEventListener("click", function(){
                     listaCompras.removeChild(li)
                 })
-                li.style.marginBottom = "10px";
+                const preço = document.createElement("h6")
+                preço.textContent = price
+                preço.className = "preço-produto"
+                preço.style.marginTop = "-20px"
+                preço.style.marginLeft = "-50px"
+
+                
+                li.appendChild(preço)
                 listaCompras.appendChild(li)
                 
             
@@ -71,6 +81,10 @@ function compras(){
         })
     })
 }
+
+
+
+
 function adicionarCarrinho(){
     document.querySelectorAll(".carrin").forEach((btn) =>{
         btn.addEventListener("click", ()=>{
@@ -89,10 +103,14 @@ function adicionarCarrinho(){
                 li.style.alignItems = "center"
                 li.style.justifyContent = "space-between"
                 remover.className = "btn-remover"
-                remover.style.marginTop = "10px";
+                
                 remover.textContent = "X"
-                li.style.marginBottom = "10px";
+                spanTexto.marginLeft = "-10px"
+                spanTexto.style.textAlign = "center"
                 spanTexto.textContent = sobre;
+                remover.style.marginLeft = "160px"
+                remover.style.marginTop = "14px"
+                
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
                 remover.addEventListener("click", function(){
@@ -101,8 +119,8 @@ function adicionarCarrinho(){
                 
 
             
-                listaCompras.appendChild(li)
             }
+            listaCompras.appendChild(li)
         })
     })
 }
