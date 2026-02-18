@@ -86,7 +86,7 @@ ul{
     border-radius: 10px;
     width: 200px;
     position: absolute;
-    
+    gap: 200px;
 }
 
 li{
@@ -99,10 +99,11 @@ li{
     overflow: hidden;
     text-overflow: ellipsis;
     padding-bottom: 0px;
-    
+    margin-top: 5px;
     min-height: 30px;
     border-radius: 10px; 
-    margin-left: 10px;   
+    margin-left: 10px; 
+    
 }
 .btn-remover{
     border-radius: 50%;
@@ -115,11 +116,26 @@ li{
     position: absolute;
     margin-top: 0px;
 }
-#preço-final{
-    display: none;
-    color: red;
+#displayTotal{
+    color: black;
     text-align: center;
-    font-size: 12px;
+    position: sticky;
+    display: flex;
+    
+    flex-direction: column;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+#btn-comprar-lista{
+    width: 140px;
+    background-color: black;
+    color: white;
+    margin-left: 25px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+#btn-comprar-lista i{
+    color: yellow;
 }
 .preço-produto{
     color: black;
@@ -128,7 +144,7 @@ li{
 }
 #lista-caixa{
     display: none;
-    margin-left: -110px;
+    margin-left: -120px;
 }
 #lista{
     display: none;

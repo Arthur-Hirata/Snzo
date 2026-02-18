@@ -32,13 +32,25 @@ $(document).ready(function(){
 })
 
 var listaCompras = document.getElementById("lista-caixa")
+const displayTotal = document.getElementById("displayTotal")
+let ValorCompras = 0;
+const comprar = document.getElementById("btn-finalizar")
+
+
+
+
+
+
+
 
 function compras(){
     document.querySelectorAll(".adc").forEach((btn) =>{
         btn.addEventListener("click", () =>{
             var item = btn.closest(".pc")
             const desc = item.querySelector(".desc").innerText.trim();
-            const price = item.querySelector(".preco-desconto").innerText;
+            var price = item.querySelector(".preco-desconto").innerText;
+            const preçoLimpo =parseFloat(price.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()); // Apenas essa ultima parte eu precisei da IA
+            
             
 
 
@@ -49,12 +61,15 @@ function compras(){
                 const li = document.createElement("li")
                 const spanTexto = document.createElement("span")
                 const remover = document.createElement("button")
-                
+                const preçoFinal = document.createElement("li")
+
+
+
                 li.style.display = "flex"
                 li.style.alignItems = "center"
                 li.style.justifyContent = "space-between"
                 remover.className = "btn-remover"
-                
+                remover.style.color = "white"
                 remover.textContent = "X"
                 spanTexto.textContent = desc;
                 // TAVA DANDO ERRO PQ O CLIENT LIA COMO SE FOSSE PRODUTOX POR CAUSA DO BOTÃO,
@@ -63,25 +78,47 @@ function compras(){
                 remover.style.marginTop = "14px"
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
+                
+                ValorCompras += preçoLimpo
+                displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                // USEI IA AQUI TAMBEM
+
+
+
                 remover.addEventListener("click", function(){
                     listaCompras.removeChild(li)
+                    ValorCompras -= preçoLimpo
+                    
+                    displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                 })
-                const preço = document.createElement("h6")
-                preço.textContent = price
-                preço.className = "preço-produto"
-                preço.style.marginTop = "-20px"
-                preço.style.marginLeft = "-50px"
+                preçoFinal.textContent = ValorCompras
+                preçoFinal.style.color = "black"
+                
+                preçoFinal.style.textAlign = "center"
+                
 
-                
-                li.appendChild(preço)
+
+
                 listaCompras.appendChild(li)
-                
-            
+                listaCompras.appendChild(displayTotal)
+                listaCompras.appendChild(comprar)
             }
+            
+            if (ValorCompras !== 0){
+                displayTotal.style.borderTop= "1px solid gray"
+            }
+            if (ValorCompras === 0){
+                displayTotal.style.borderTop = "1px solid white"
+            }
+            
         })
     })
 }
-
+function finalizarCompra(){
+    if (ValorCompras === 0){
+        alert("Você não possui itens no carrinho ainda")
+    }
+}   
 
 
 
@@ -90,6 +127,8 @@ function adicionarCarrinho(){
         btn.addEventListener("click", ()=>{
             const product = btn.closest(".itens")
             const sobre = product.querySelector(".sub").innerText.trim();
+            const price = product.querySelector(".price").innerText.trim();
+            const preçoLimpo = parseFloat(price.replace("R$", "").replace(/\./g, "").replace(",", ".").trim())
 
             const jaExiste = Array.from(listaCompras.querySelectorAll("span"))
                 .some(span => span.textContent.trim() === (sobre))
@@ -110,17 +149,33 @@ function adicionarCarrinho(){
                 spanTexto.textContent = sobre;
                 remover.style.marginLeft = "160px"
                 remover.style.marginTop = "14px"
+                remover.style.color = "white"
                 
+                ValorCompras += preçoLimpo
+                
+                displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+
+
+
+
+
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
                 remover.addEventListener("click", function(){
                     listaCompras.removeChild(li)
+                    ValorCompras -= preçoLimpo
+                    displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                 })
                 
 
             
+                listaCompras.appendChild(li)
+                listaCompras.appendChild(displayTotal)
+                listaCompras.appendChild(comprar)
             }
-            listaCompras.appendChild(li)
+            if (ValorCompras !== 0){
+                displayTotal.style.borderTop = "1px solid gray"
+            }
         })
     })
 }
@@ -146,6 +201,8 @@ function favoritar(){
                 
                 listaFavoritos.appendChild(li)
                 
+                
+            
             }
         })
     })
