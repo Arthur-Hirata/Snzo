@@ -84,9 +84,11 @@ ul{
     margin-top: 10px;
     border: 1px solid rgb(163, 157, 157);
     border-radius: 10px;
-    width: 200px;
+    width: 220px;
     position: absolute;
     gap: 200px;
+    overflow-y:auto;
+    max-height: 200px;
 }
 
 li{
@@ -106,7 +108,7 @@ li{
     
 }
 .btn-remover{
-    border-radius: 50%;
+    border-radius: 5px;
     width: 20px;
     height: 20px;
     border: none;
@@ -130,9 +132,19 @@ li{
     width: 140px;
     background-color: black;
     color: white;
-    margin-left: 25px;
+    margin-left: 35px;
     margin-top: 10px;
     border-radius: 10px;
+}
+#limpar{
+    background-color: rgb(83, 79, 79);
+    color:white;
+    border: none;
+    border-radius: 6px;
+    margin-left: 35px;
+    width: 140px;
+    margin-top: 10px;
+
 }
 #btn-comprar-lista i{
     color: yellow;

@@ -107,9 +107,9 @@ function compras(){
             if (ValorCompras !== 0){
                 displayTotal.style.borderTop= "1px solid gray"
             }
-            if (ValorCompras === 0){
-                displayTotal.style.borderTop = "1px solid white"
-            }
+            
+
+
             
         })
     })
@@ -118,11 +118,13 @@ function finalizarCompra(){
     if (ValorCompras === 0){
         alert("Você não possui itens no carrinho ainda")
     }
+     
 }   
 
 
 
 function adicionarCarrinho(){
+    
     document.querySelectorAll(".carrin").forEach((btn) =>{
         btn.addEventListener("click", ()=>{
             const product = btn.closest(".itens")
@@ -138,11 +140,21 @@ function adicionarCarrinho(){
                 const li = document.createElement("li")
                 const spanTexto = document.createElement("span")
                 const remover = document.createElement("button")
+                const itensLi = document.querySelectorAll('#lista-caixa > li')
+                
+                
+                
                 li.style.display = "flex"
                 li.style.alignItems = "center"
                 li.style.justifyContent = "space-between"
                 remover.className = "btn-remover"
                 
+
+
+
+
+
+
                 remover.textContent = "X"
                 spanTexto.marginLeft = "-10px"
                 spanTexto.style.textAlign = "center"
@@ -172,33 +184,73 @@ function adicionarCarrinho(){
                 listaCompras.appendChild(li)
                 listaCompras.appendChild(displayTotal)
                 listaCompras.appendChild(comprar)
+                mostrarCarrinho();
             }
             if (ValorCompras !== 0){
                 displayTotal.style.borderTop = "1px solid gray"
             }
+            
         })
     })
 }
 function mostrarCarrinho(){
+    
     listaCompras.style.display = "block"
     listaFavoritos.style.display = "none"
 }
 
+
+
+
+
 var listaFavoritos = document.getElementById("lista")
+var limparListaFavoritos = document.getElementById("limpar")
+
+
 
 function favoritar(){
     document.querySelectorAll(".favorito").forEach ((btn) =>{
         btn.addEventListener("click", ()=>{
             const produto = btn.closest(".pc");
             const desc = produto.querySelector(".desc").innerText;
-            
-            const jaExiste = Array.from(listaFavoritos.children)
-                .some(li => li.textContent === (desc))
+            const btnfav = produto.querySelector("#favorito")
+            btnfav.className = ("fa-solid fa-heart")
+
+
+
+
+            const jaExiste = Array.from(listaFavoritos.querySelectorAll("span"))
+                .some(span => span.textContent.trim() === (desc))
             
             if (!jaExiste){
                 const li = document.createElement("li")
-                li.textContent = desc;
+                const spanTexto  = document.createElement("span")
                 
+                const remover = document.createElement("button")
+                li.style.display = "flex"
+                li.style.alignItems = "center"
+                li.style.justifyContent = "space-between"
+                remover.classList = "btn-remover"
+
+                remover.textContent = "X"
+                remover.style.color = "white"
+                remover.style.marginLeft = "160px"
+                remover.style.marginTop= "12px"
+                spanTexto.textContent = desc;
+                spanTexto.style.marginTop = "10xp"
+                li.style.marginTop = "-5px"
+                spanTexto.style.textAlign= "center"
+                remover.addEventListener("click", function(){
+                    listaFavoritos.removeChild(li)
+                    btnfav.className = "fa-regular fa-heart"
+                })
+
+
+
+
+
+                li.appendChild(spanTexto)
+                li.appendChild(remover)
                 listaFavoritos.appendChild(li)
                 
                 
@@ -212,14 +264,43 @@ function adicionarFavoritos(){
         btn.addEventListener("click" , ()=>{
             const produtc =btn.closest(".itens");
             const abt = produtc.querySelector(".sub").innerText;
+            const cora = produtc.querySelector("#cora");
+            cora.className = "fa-solid fa-heart"
 
-            const jaExiste = Array.from(listaFavoritos.children)
-                .some(li => li.textContent === (abt))
+            const jaExiste = Array.from(listaFavoritos.querySelectorAll("span"))
+                .some(span => span.textContent.trim() === (abt))
 
             if (!jaExiste){
                 const li = document.createElement("li")
-                li.textContent = abt;
-                listaFavoritos.appendChild(li)
+                const spanTexto = document.createElement("span")
+                const remover = document.createElement("button")
+
+                li.style.display = "flex"
+                li.style.alignItems = "center"
+                li.style.justifyContent = "space-between"
+                remover.classList = "btn-remover"
+
+                remover.textContent = "X"
+                remover.style.color = "white"
+                remover.style.marginLeft = "160px"
+                remover.style.marginTop= "12px"
+                spanTexto.textContent = abt;
+                spanTexto.style.marginTop = "-10xp"
+                spanTexto.style.textAlign= "center"
+
+                li.appendChild(spanTexto)
+                li.appendChild(remover)
+
+                remover.addEventListener("click", function(){
+                    listaFavoritos.removeChild(li)
+                    cora.className = "fa-regular fa-heart"
+                })
+
+
+
+                
+                listaFavoritos.prepend(li)
+                
             }
         })
     })
@@ -229,7 +310,30 @@ function adicionarFavoritos(){
 function mostrarfavoritos(){
     listaFavoritos.style.display = "block";
     listaCompras.style.display = "none";
+    
 }
+function limparLista(){
+    listaFavoritos.replaceChildren("")
+    listaFavoritos.replaceChildren(limparListaFavoritos)
+
+    const coraçoes = document.querySelectorAll("#cora")
+    coraçoes.forEach( cora=>{
+        cora.className = "fa-regular fa-heart"
+    })
+    const coraçoes2 = document.querySelectorAll("#favorito")
+    coraçoes2.forEach(btnfav =>{
+        btnfav.className = "fa-regular fa-heart"
+    })
+}
+
+
+
+
+
+
+
+
+
 var botaoRam= document.getElementById("ram")
 var botaoTudo = document.getElementById('tudo')
 var botaoCpu=document.getElementById('cpu')
@@ -257,14 +361,6 @@ var gab1 = document.getElementById("gab1")
 var gab2 = document.getElementById("gab2")
 var gab3 = document.getElementById("gab3")
 
-
-
-
-
-
-
-
-
 botaoTudo.addEventListener("click", function(){
     this.className = "clicado"
     botaoRam.classList = 'nao-clicado'
@@ -288,9 +384,6 @@ botaoTudo.addEventListener("click", function(){
     gab1.style.display ="block"
     gab2.style.display ="block"
     gab3.style.display ="block"
-
-
-
 })
 botaoRam.addEventListener("click", function(){
     this.className = "clicado"
@@ -321,7 +414,6 @@ botaoRam.addEventListener("click", function(){
     gab1.style.display ="none"
     gab2.style.display ="none"
     gab3.style.display ="none"
- 
 })
 botaoCpu.addEventListener("click", function(){
     this.className = "clicado"
@@ -463,7 +555,6 @@ botaoGabinete.addEventListener("click", function(){
     gab3.style.display ="block"
 
 })
-
 
 const input = document.getElementById("input-pesquisa")
 input.addEventListener("keyup", function(){
