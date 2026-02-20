@@ -601,16 +601,19 @@ botaoGabinete.addEventListener("click", function(){
 
 })
 
-const input = document.getElementById("input-pesquisa")
-input.addEventListener("keyup", function(){
-    const filtro = input.valeu.toLowerCase()
-    const itens = document.querySelectorAll(".test .itens .sub")
-    itens.forEach(item =>{
-        item.style.display = item.textContent
-            .toLowerCase()
-            .includes(filtro) ? "" : "none";
+const inputBusca = document.getElementById("input-pesquisa")
+const itens  = document.querySelectorAll(".itens")
+
+inputBusca.addEventListener("input",  () =>{
+    const valorBusca = inputBusca.value.toLowerCase();
+
+    itens.forEach(item => {
+        const nomeProduto = item.querySelector(".sub").innerText;
+
+        if (nomeProduto.includes(valorBusca)){
+            item.style.display = "block";
+        } else {
+            item.style.display= "none";
+        }
     })
 })
-
-
-

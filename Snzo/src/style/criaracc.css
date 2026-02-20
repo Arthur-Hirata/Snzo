@@ -7,7 +7,11 @@
 }
 body{
         background-color: rgb(240, 239, 237);
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
 }
 .box{
     width: 500px;
@@ -15,8 +19,8 @@ body{
     background-color: white;
     border: 1px solid gray;
     border-radius: 10px;
-    margin-left: 440px;
-    margin-top: 30px;
+    
+    
     box-shadow: 0px 0px 12px 4px rgba(0,0, 0, 0.1);
 }
 .caixa{
@@ -122,11 +126,11 @@ button:hover{
     font-size: 100px;
     margin-top: 100px;
 }
-@media screen and (max-width:600px) {
+@media screen and (min-width:400px) and (max-width:600px) {
     .box{
-        margin-left:30px;
+        
         width: 360px;
-        margin-top: 80px;
+        
     }
     #comp{
         display: none;
@@ -142,29 +146,43 @@ button:hover{
         margin-left: 30px;
     }
 }
-@media screen and (max-width:390px) {
+@media screen and (min-width:360px) and (max-width:399px) {
     .box{
-        margin-left: 15px;
+        width: 340px;
+    }
+    .inputs{
+        margin-left: 10px;
+    }
+    #comp{
+        display: none;
+    }
+    .metodos{
+        text-align: center;
+
+    }
+    .options{
+        margin-left: -100px;
+    }
+    .btn-criar{
+        margin-left: 20px;
     }
 }
-@media screen and (max-width:380px){
+@media screen and (min-width:300px) and (max-width:359px) {
     .box{
-        margin-left: 8px;
+        width: 290px;
+    }
+    .inputs{
+        margin-left: 10px;
+    }
+    #comp{
+        display: none;
+    }
+    .options{
+        margin-left: -60px;
+    }
+    .btn-criar{
+        margin-left: 40px;
+        width: 210px;
     }
 }
-@media screen and (max-height:850px) {
-    .box{
-        margin-top: 40px;
-    }
-}
-@media screen and (max-width:361px){
-    .box{
-        margin-left: 4px;
-    }
-}
-@media screen and (min-width:1400px) and (max-width:1900px) {
-    .box{
-        margin-left: 490px;
-        margin-top: 100px;
-    }
-}
+

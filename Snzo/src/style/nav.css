@@ -51,6 +51,8 @@ nav{
 }
 body{
     background-color: rgb(240, 239, 237);
+    ;
+
 }
 .aux{
     display: flex;
@@ -416,5 +418,14 @@ button:hover{
     }
     .aux{
         margin-left: 250px;
+    }
+}
+@media screen and (min-width:1901px) and (max-width:2000px) {
+    #pesquisa{
+        margin-left: 400px;
+
+    }
+    .aux{
+        margin-left: 333px;
     }
 }

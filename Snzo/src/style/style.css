@@ -259,9 +259,19 @@
 }
 @media screen and (min-width:1400px) and (max-width:1900px) {
     .promocao{
+       
+        justify-content: center;
         margin-left: 170px;
+        
     }
-    .promo{
-        margin-left: 40px;
+    .pcs{
+        margin:  0 auto;
+        justify-content: center;
+    }
+}
+@media screen and (min-width:1900px) and (max-width:2000px) {
+    .promocao{
+        justify-content: center;
+        margin-left: 226px;
     }
 }
