@@ -95,3 +95,14 @@
         text-orientation: upright   ;
     }
 }
+@media screen and (min-width:1400px) and (max-width:1900px) {
+    .tit{
+        text-align: center;
+    }
+    .avs{
+        margin-left: 50px;
+    }
+    .merchan{
+        margin-left: 250px;
+    }
+}

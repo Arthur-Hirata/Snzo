@@ -51,7 +51,20 @@ function compras(){
             var price = item.querySelector(".preco-desconto").innerText;
             const preçoLimpo =parseFloat(price.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()); // Apenas essa ultima parte eu precisei da IA
             
+            const check = document.createElement("i")
+            check.className = "fa-solid fa-circle-check"
+            check.style.color = "green"
+            check.style.fontSize = "20px"
+            check.style.marginTop = "3px"
+            btn.textContent = ""
+            btn.appendChild(check)
             
+            const msgDefault = "Adicionar ao carrinho."
+            const car = document.createElement("i")
+            car.className = "fa-solid fa-basket-shopping"
+            car.style.color = "yellow"
+
+
 
 
             const jaExiste = Array.from(listaCompras.querySelectorAll("span"))
@@ -88,7 +101,8 @@ function compras(){
                 remover.addEventListener("click", function(){
                     listaCompras.removeChild(li)
                     ValorCompras -= preçoLimpo
-                    
+                    btn.textContent = msgDefault;
+                    btn.appendChild(car)
                     displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                 })
                 preçoFinal.textContent = ValorCompras
@@ -114,12 +128,16 @@ function compras(){
         })
     })
 }
+const alerta = document.getElementById("customAlert")
 function finalizarCompra(){
     if (ValorCompras === 0){
-        alert("Você não possui itens no carrinho ainda")
+        alerta.style.display = "block"
     }
      
-}   
+} 
+function fecharAlert(){
+    alerta.style.display = "none"
+}
 
 
 
@@ -131,6 +149,21 @@ function adicionarCarrinho(){
             const sobre = product.querySelector(".sub").innerText.trim();
             const price = product.querySelector(".price").innerText.trim();
             const preçoLimpo = parseFloat(price.replace("R$", "").replace(/\./g, "").replace(",", ".").trim())
+            const check = document.createElement("i")
+            check.className = "fa-solid fa-circle-check"
+            check.style.color = "green"
+            check.style.fontSize = "20px"
+            check.style.marginTop = "3px"
+            btn.textContent = ""
+            btn.appendChild(check)
+            
+            const msgDefault = "Adicionar ao carrinho."
+            const car = document.createElement("i")
+            car.className = "fa-solid fa-basket-shopping"
+            car.style.color = "yellow"
+
+
+
 
             const jaExiste = Array.from(listaCompras.querySelectorAll("span"))
                 .some(span => span.textContent.trim() === (sobre))
@@ -176,6 +209,9 @@ function adicionarCarrinho(){
                 remover.addEventListener("click", function(){
                     listaCompras.removeChild(li)
                     ValorCompras -= preçoLimpo
+                    btn.textContent = msgDefault;
+                    btn.appendChild(car)
+
                     displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                 })
                 
@@ -194,9 +230,13 @@ function adicionarCarrinho(){
     })
 }
 function mostrarCarrinho(){
+    if(listaCompras.style.display === "none"){
+        listaCompras.style.display = "block"
+        listaFavoritos.style.display = "none"
+    } else{
+        listaCompras.style.display = "none"
+    }
     
-    listaCompras.style.display = "block"
-    listaFavoritos.style.display = "none"
 }
 
 
@@ -308,8 +348,13 @@ function adicionarFavoritos(){
 
 
 function mostrarfavoritos(){
-    listaFavoritos.style.display = "block";
-    listaCompras.style.display = "none";
+    if (listaFavoritos.style.display === "none"){
+        listaFavoritos.style.display = "block";
+        listaCompras.style.display = "none";
+    } else {
+        listaFavoritos.style.display = "none"
+    }
+    
     
 }
 function limparLista(){

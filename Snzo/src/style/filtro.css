@@ -579,3 +579,8 @@
         overflow-y: auto;
     }
 }
+@media screen and (min-width:1400px) and (max-width:1900px){
+    #box{
+        margin-left: 120px;
+    }
+}

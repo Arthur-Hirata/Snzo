@@ -349,7 +349,7 @@ button:hover{
         display: none;
     }
 }
-@media screen and (max-width:900px){
+@media screen and (min-width:800px) and (max-width:900px){
    nav{
         padding-top: 0px;
         position: static;
@@ -402,11 +402,19 @@ button:hover{
     }
     
 }
-@media screen and (max-width:799px){
+@media screen and (min-width:750px) and (max-width:799px){
     #pesquisa{
         margin-left: 65px;
     }
     .aux{
         margin-left: 40px;
+    }
+}
+@media screen and (min-width:1390px) and (max-width:1900px) {
+    #pesquisa{
+        margin-left: 300px;
+    }
+    .aux{
+        margin-left: 250px;
     }
 }
