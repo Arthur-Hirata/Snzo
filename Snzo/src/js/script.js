@@ -49,8 +49,11 @@ function compras(){
             var item = btn.closest(".pc")
             const desc = item.querySelector(".desc").innerText.trim();
             var price = item.querySelector(".preco-desconto").innerText;
-            const preçoLimpo =parseFloat(price.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()); // Apenas essa ultima parte eu precisei da IA
+            let preçoLimpo =parseFloat(price.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()); // Apenas essa ultima parte eu precisei da IA
             
+
+
+
             const check = document.createElement("i")
             check.className = "fa-solid fa-circle-check"
             check.style.color = "green"
@@ -75,6 +78,34 @@ function compras(){
                 const spanTexto = document.createElement("span")
                 const remover = document.createElement("button")
                 const preçoFinal = document.createElement("li")
+                const btnadc = document.createElement("button")
+                
+                btnadc.className = "btnadc"
+                btnadc.textContent = "+"
+                
+
+
+                const quantidade = document.createElement("p")
+                let i = 1;
+                quantidade.textContent = i + "x";
+                quantidade.className = "quantidade"
+
+                const preçoUnitario = preçoLimpo;
+
+
+
+                btnadc.addEventListener("click", function(){
+                    i++
+                    quantidade.textContent = i + "x"
+                    ValorCompras = preçoUnitario * i;
+                    displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                })
+                
+
+
+
+
+
 
 
 
@@ -87,23 +118,37 @@ function compras(){
                 spanTexto.textContent = desc;
                 // TAVA DANDO ERRO PQ O CLIENT LIA COMO SE FOSSE PRODUTOX POR CAUSA DO BOTÃO,
                 // AGORA TEM UM SPAN NO MEIO, ficando <span>texto</span> <button>
-                remover.style.marginLeft = "160px"
+                remover.style.marginLeft = "180px"
                 remover.style.marginTop = "14px"
+                
+
+
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
-                
+                li.appendChild(btnadc)
+                li.appendChild(quantidade)
+               
                 ValorCompras += preçoLimpo
                 displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                 // USEI IA AQUI TAMBEM
+                
+
 
 
 
                 remover.addEventListener("click", function(){
-                    listaCompras.removeChild(li)
-                    ValorCompras -= preçoLimpo
-                    btn.textContent = msgDefault;
-                    btn.appendChild(car)
-                    displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                    if (i > 1 ){
+                        i--
+                        quantidade.textContent = i + "x"
+                        ValorCompras = ValorCompras - preçoUnitario;
+                        displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                    }else {
+                        listaCompras.removeChild(li)
+                        ValorCompras = ValorCompras - preçoUnitario;
+                        btn.textContent = msgDefault;
+                        btn.appendChild(car)
+                        displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                    }
                 })
                 preçoFinal.textContent = ValorCompras
                 preçoFinal.style.color = "black"
@@ -112,7 +157,7 @@ function compras(){
                 
 
 
-
+                
                 listaCompras.appendChild(li)
                 listaCompras.appendChild(displayTotal)
                 listaCompras.appendChild(comprar)
@@ -145,6 +190,7 @@ function adicionarCarrinho(){
     
     document.querySelectorAll(".carrin").forEach((btn) =>{
         btn.addEventListener("click", ()=>{
+            listaCompras.style.display = "block"
             const product = btn.closest(".itens")
             const sobre = product.querySelector(".sub").innerText.trim();
             const price = product.querySelector(".price").innerText.trim();
@@ -156,6 +202,7 @@ function adicionarCarrinho(){
             check.style.marginTop = "3px"
             btn.textContent = ""
             btn.appendChild(check)
+            
             
             const msgDefault = "Adicionar ao carrinho."
             const car = document.createElement("i")
@@ -174,6 +221,29 @@ function adicionarCarrinho(){
                 const spanTexto = document.createElement("span")
                 const remover = document.createElement("button")
                 const itensLi = document.querySelectorAll('#lista-caixa > li')
+                let btnadc = document.createElement("button")
+                
+                btnadc.className = "btnadc"
+                btnadc.textContent = "+"
+                
+
+
+                let quantidade = document.createElement("p")
+                let i = 1;
+                quantidade.textContent = i + "x";
+                quantidade.className = "quantidade"
+
+                const preçoUnitario = preçoLimpo;
+
+
+
+                btnadc.addEventListener("click", function(){
+                    i++
+                    quantidade.textContent = i + "x"
+                    ValorCompras = preçoUnitario * i;
+                    displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                })
+
                 
                 
                 
@@ -192,7 +262,7 @@ function adicionarCarrinho(){
                 spanTexto.marginLeft = "-10px"
                 spanTexto.style.textAlign = "center"
                 spanTexto.textContent = sobre;
-                remover.style.marginLeft = "160px"
+                remover.style.marginLeft = "180px"
                 remover.style.marginTop = "14px"
                 remover.style.color = "white"
                 
@@ -206,13 +276,21 @@ function adicionarCarrinho(){
 
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
+                li.appendChild(btnadc)
+                li.appendChild(quantidade)
                 remover.addEventListener("click", function(){
-                    listaCompras.removeChild(li)
-                    ValorCompras -= preçoLimpo
-                    btn.textContent = msgDefault;
-                    btn.appendChild(car)
-
-                    displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                    if (quantidade > 1){
+                        i--
+                        quantidade = i + "x"
+                        ValorCompras -= preçoUnitario;
+                        displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                    } else {
+                        listaCompras.removeChild(li)
+                        ValorCompras -= preçoLimpo
+                        displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
+                        btn.textContent = msgDefault;
+                        btn.appendChild(car)
+                    }
                 })
                 
 
@@ -278,7 +356,7 @@ function favoritar(){
                 remover.style.marginTop= "12px"
                 spanTexto.textContent = desc;
                 spanTexto.style.marginTop = "10xp"
-                li.style.marginTop = "-5px"
+                li.style.marginTop = "5px"
                 spanTexto.style.textAlign= "center"
                 remover.addEventListener("click", function(){
                     listaFavoritos.removeChild(li)
@@ -291,7 +369,7 @@ function favoritar(){
 
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
-                listaFavoritos.appendChild(li)
+                listaFavoritos.prepend(li)
                 
                 
             
@@ -601,19 +679,24 @@ botaoGabinete.addEventListener("click", function(){
 
 })
 
-const inputBusca = document.getElementById("input-pesquisa")
-const itens  = document.querySelectorAll(".itens")
 
-inputBusca.addEventListener("input",  () =>{
-    const valorBusca = inputBusca.value.toLowerCase();
+function buscarProduto() {
+    let input = document.getElementById("pesquisa").value.toLowerCase();
+    let produtos = document.querySelectorAll(".itens");
 
-    itens.forEach(item => {
-        const nomeProduto = item.querySelector(".sub").innerText;
+    produtos.forEach(function(produto) {
 
-        if (nomeProduto.includes(valorBusca)){
-            item.style.display = "block";
+        let nomeElemento = produto.querySelector(".sub");
+        let precoElemento = produto.querySelector(".price");
+
+        let nome = nomeElemento ? nomeElemento.textContent.toLowerCase() : "";
+        let preco = precoElemento ? precoElemento.textContent.toLowerCase() : "";
+
+        if (nome.includes(input) || preco.includes(input)) {
+            produto.style.display = "block";
         } else {
-            item.style.display= "none";
+            produto.style.display = "none";
         }
-    })
-})
+    });
+}
+
