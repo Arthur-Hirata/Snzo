@@ -4,18 +4,12 @@ $(document).ready(function(){
         duration: 1500,
         distance: '20%'
     });
-     ScrollReveal().reveal('.itens', {
-        origin : 'left',
-        duration : 2000,
-        distance : '20%'
-
-     })
-      ScrollReveal().reveal('.placa', {
-        origin : 'left',
-        duration : 2000,
-        distance : '20%'
-
-     })
+     // tirei o scroll reveal dos '.itens' pq não tava funcionando corretamente
+     /*ScrollReveal().reveal('.itens', {
+        origin: 'left',
+        duration: 1500,
+        distance: '20%'
+     }) */
      ScrollReveal().reveal('.comentarios', {
         origin : 'left',
         duration : 2000,
@@ -36,13 +30,6 @@ const displayTotal = document.getElementById("displayTotal")
 let ValorCompras = 0;
 const comprar = document.getElementById("btn-finalizar")
 
-
-
-
-
-
-
-
 function compras(){
     document.querySelectorAll(".adc").forEach((btn) =>{
         btn.addEventListener("click", () =>{
@@ -51,9 +38,6 @@ function compras(){
             var price = item.querySelector(".preco-desconto").innerText;
             let preçoLimpo =parseFloat(price.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()); // Apenas essa ultima parte eu precisei da IA
             
-
-
-
             const check = document.createElement("i")
             check.className = "fa-solid fa-circle-check"
             check.style.color = "green"
@@ -66,9 +50,6 @@ function compras(){
             const car = document.createElement("i")
             car.className = "fa-solid fa-basket-shopping"
             car.style.color = "yellow"
-
-
-
 
             const jaExiste = Array.from(listaCompras.querySelectorAll("span"))
                 .some(span => span.textContent.trim() === (desc))
@@ -83,16 +64,12 @@ function compras(){
                 btnadc.className = "btnadc"
                 btnadc.textContent = "+"
                 
-
-
                 const quantidade = document.createElement("p")
                 let i = 1;
                 quantidade.textContent = i + "x";
                 quantidade.className = "quantidade"
 
                 const preçoUnitario = preçoLimpo;
-
-
 
                 btnadc.addEventListener("click", function(){
                     i++
@@ -101,14 +78,6 @@ function compras(){
                     displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                 })
                 
-
-
-
-
-
-
-
-
                 li.style.display = "flex"
                 li.style.alignItems = "center"
                 li.style.justifyContent = "space-between"
@@ -121,8 +90,6 @@ function compras(){
                 remover.style.marginLeft = "180px"
                 remover.style.marginTop = "14px"
                 
-
-
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
                 li.appendChild(btnadc)
@@ -132,10 +99,6 @@ function compras(){
                 displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                 // USEI IA AQUI TAMBEM
                 
-
-
-
-
                 remover.addEventListener("click", function(){
                     if (i > 1 ){
                         i--
@@ -155,9 +118,6 @@ function compras(){
                 
                 preçoFinal.style.textAlign = "center"
                 
-
-
-                
                 listaCompras.appendChild(li)
                 listaCompras.appendChild(displayTotal)
                 listaCompras.appendChild(comprar)
@@ -166,9 +126,6 @@ function compras(){
             if (ValorCompras !== 0){
                 displayTotal.style.borderTop= "1px solid gray"
             }
-            
-
-
             
         })
     })
@@ -183,8 +140,6 @@ function finalizarCompra(){
 function fecharAlert(){
     alerta.style.display = "none"
 }
-
-
 
 function adicionarCarrinho(){
     
@@ -203,14 +158,10 @@ function adicionarCarrinho(){
             btn.textContent = ""
             btn.appendChild(check)
             
-            
             const msgDefault = "Adicionar ao carrinho."
             const car = document.createElement("i")
             car.className = "fa-solid fa-basket-shopping"
             car.style.color = "yellow"
-
-
-
 
             const jaExiste = Array.from(listaCompras.querySelectorAll("span"))
                 .some(span => span.textContent.trim() === (sobre))
@@ -226,16 +177,12 @@ function adicionarCarrinho(){
                 btnadc.className = "btnadc"
                 btnadc.textContent = "+"
                 
-
-
                 let quantidade = document.createElement("p")
                 let i = 1;
                 quantidade.textContent = i + "x";
                 quantidade.className = "quantidade"
 
                 const preçoUnitario = preçoLimpo;
-
-
 
                 btnadc.addEventListener("click", function(){
                     i++
@@ -244,20 +191,11 @@ function adicionarCarrinho(){
                     displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                 })
 
-                
-                
-                
                 li.style.display = "flex"
                 li.style.alignItems = "center"
                 li.style.justifyContent = "space-between"
                 remover.className = "btn-remover"
-                
-
-
-
-
-
-
+            
                 remover.textContent = "X"
                 spanTexto.marginLeft = "-10px"
                 spanTexto.style.textAlign = "center"
@@ -269,10 +207,6 @@ function adicionarCarrinho(){
                 ValorCompras += preçoLimpo
                 
                 displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
-
-
-
-
 
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
@@ -293,8 +227,6 @@ function adicionarCarrinho(){
                     }
                 })
                 
-
-            
                 listaCompras.appendChild(li)
                 listaCompras.appendChild(displayTotal)
                 listaCompras.appendChild(comprar)
@@ -317,14 +249,8 @@ function mostrarCarrinho(){
     
 }
 
-
-
-
-
 var listaFavoritos = document.getElementById("lista")
 var limparListaFavoritos = document.getElementById("limpar")
-
-
 
 function favoritar(){
     document.querySelectorAll(".favorito").forEach ((btn) =>{
@@ -333,9 +259,6 @@ function favoritar(){
             const desc = produto.querySelector(".desc").innerText;
             const btnfav = produto.querySelector("#favorito")
             btnfav.className = ("fa-solid fa-heart")
-
-
-
 
             const jaExiste = Array.from(listaFavoritos.querySelectorAll("span"))
                 .some(span => span.textContent.trim() === (desc))
@@ -363,16 +286,10 @@ function favoritar(){
                     btnfav.className = "fa-regular fa-heart"
                 })
 
-
-
-
-
                 li.appendChild(spanTexto)
                 li.appendChild(remover)
                 listaFavoritos.prepend(li)
                 
-                
-            
             }
         })
     })
@@ -414,9 +331,6 @@ function adicionarFavoritos(){
                     cora.className = "fa-regular fa-heart"
                 })
 
-
-
-                
                 listaFavoritos.prepend(li)
                 
             }
@@ -424,16 +338,13 @@ function adicionarFavoritos(){
     })
 }
 
-
 function mostrarfavoritos(){
     if (listaFavoritos.style.display === "none"){
         listaFavoritos.style.display = "block";
         listaCompras.style.display = "none";
     } else {
         listaFavoritos.style.display = "none"
-    }
-    
-    
+    } 
 }
 function limparLista(){
     listaFavoritos.replaceChildren("")
@@ -448,14 +359,6 @@ function limparLista(){
         btnfav.className = "fa-regular fa-heart"
     })
 }
-
-
-
-
-
-
-
-
 
 var botaoRam= document.getElementById("ram")
 var botaoTudo = document.getElementById('tudo')
@@ -484,7 +387,7 @@ var gab1 = document.getElementById("gab1")
 var gab2 = document.getElementById("gab2")
 var gab3 = document.getElementById("gab3")
 
-botaoTudo.addEventListener("click", function(){
+botaoTudo.addEventListener("click", function (){
     this.className = "clicado"
     botaoRam.classList = 'nao-clicado'
     botaoGpu.classList = 'nao-clicado'
@@ -679,24 +582,27 @@ botaoGabinete.addEventListener("click", function(){
 
 })
 
+function buscarProduto(){
+    const inputpesquisa = document.getElementById("input-pesquisa").value.toLowerCase();
+    let itens = document.getElementsByClassName('itens')
 
-function buscarProduto() {
-    let input = document.getElementById("pesquisa").value.toLowerCase();
-    let produtos = document.querySelectorAll(".itens");
-
-    produtos.forEach(function(produto) {
-
-        let nomeElemento = produto.querySelector(".sub");
-        let precoElemento = produto.querySelector(".price");
-
-        let nome = nomeElemento ? nomeElemento.textContent.toLowerCase() : "";
-        let preco = precoElemento ? precoElemento.textContent.toLowerCase() : "";
-
-        if (nome.includes(input) || preco.includes(input)) {
-            produto.style.display = "block";
-        } else {
-            produto.style.display = "none";
+    for (let a = 0; a <itens.length; a++ ){
+        let subTexto = itens[a].querySelector(".sub")
+    
+        if (subTexto){
+            let conteudo = subTexto.textContent || subTexto.innerText;
+            
+            if (conteudo.toLowerCase().indexOf(inputpesquisa)> -1 ){
+                itens[a].style.display = ""
+            } else {
+                itens [a].style.display = "none"
+            }
         }
-    });
+    }
+    
 }
-
+document.getElementById("apagar").addEventListener("click", function(){
+    const input = document.getElementById("input-pesquisa")
+    input.value = ""
+    buscarProduto();
+})

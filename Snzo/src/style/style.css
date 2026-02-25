@@ -206,6 +206,7 @@
 @media screen and (min-width:320px) and (max-width:399px) {
     .promocao{
         display: none;
+        user-select: none;
     }
     #pc-tit{
         font-size: 25px;
@@ -234,6 +235,7 @@
         margin-left: 60px;
         width: 700px;
         margin-top: 20px;
+        user-select: none;
     }
     .promo{
         display: grid;
@@ -262,6 +264,7 @@
        
         justify-content: center;
         margin-left: 170px;
+        user-select: none;
         
     }
     .pcs{
@@ -273,5 +276,6 @@
     .promocao{
         justify-content: center;
         margin-left: 226px;
+        user-select: none;
     }
 }
