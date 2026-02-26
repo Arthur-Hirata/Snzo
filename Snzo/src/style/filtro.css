@@ -215,7 +215,16 @@
     height: 10px;
     margin-left: 30px;
 }
-
+#item-nao-encontrado{
+    color: red;
+    display: none;
+    font-size: 30px;
+    margin-left: 50px;
+   
+}
+.preco-org{
+    margin-top: -15px;
+}
 /* IMPLEMENTANDO RESPONSIVIDADE */
 @media screen and (min-width:300px) and (max-width : 399px) {
     #pc-tit{
@@ -267,7 +276,7 @@
     }
     #box{
         width: 310px;
-        margin-left: 40px;
+        margin-left: 60px;
         flex-direction: column;
         height: 1200px;
         overflow-x: none;
@@ -405,12 +414,9 @@
     }
     #filtros{
         font-size: 15px;
+        height: 50px;
     }
-    .test{
-        display: grid;
-        grid-template-columns: repeat(6, 2);
-        overflow-y: auto;
-    }
+    
 }
 @media screen and (min-width:801px) and (max-width:850px){
 #pc-tit{
@@ -437,12 +443,14 @@
     }
     .filtrar{
         flex-direction: row;
+        
     }
     #logo-2{
         display: none;
     }
     #filtros{
         font-size: 15px;
+        height: 50px;
     }
     .test{
         width: 800px;
@@ -481,7 +489,9 @@
     }
     #apagar{
         margin-top: 5px;
+        margin-left: 5px;
     }
+    
 }
 @media screen and (min-width:880px) and (max-width:999px){
 #pc-tit{
@@ -515,16 +525,18 @@
     #filtros{
         font-size: 15px;
     }
-    .test{
-        display: grid;
-        grid-template-columns: repeat(6, 2);
-        overflow-y: auto;
-    }
     #apagar{
         margin-top: 5px;
     }
 }
 @media screen and (min-width:1400px) and (max-width:1900px){
+    #box{
+        margin: 0 auto;
+        
+        
+    }
+}
+@media screen and (min-width:1901px) and (max-width:2000px){
     #box{
         margin: 0 auto;
         

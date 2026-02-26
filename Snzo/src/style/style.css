@@ -214,7 +214,7 @@
     .promo{
         display: flex;
         flex-direction: column;
-        margin-left: -10px;
+        margin-left: 15px;
         user-select: none;
     }
     

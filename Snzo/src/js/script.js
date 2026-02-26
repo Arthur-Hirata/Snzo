@@ -595,7 +595,12 @@ function buscarProduto(){
             if (conteudo.toLowerCase().indexOf(inputpesquisa)> -1 ){
                 itens[a].style.display = ""
             } else {
-                itens [a].style.display = "none"
+                itens[a].style.display = "none"
+                const itemNaoEncontrado = document.getElementById("item-nao-encontrado")
+                
+                itemNaoEncontrado.style.display = "block"
+
+                
             }
         }
     }
@@ -606,3 +611,54 @@ document.getElementById("apagar").addEventListener("click", function(){
     input.value = ""
     buscarProduto();
 })
+function mostrarTudo(){
+    let itens = document.querySelectorAll(".itens")
+    itens.forEach(item =>{
+        item.style.display = "block"
+    })
+}
+function produtosPromocao(){
+    let itens = document.querySelectorAll(".itens")
+    itens.forEach(item =>{
+        let estaPromocao = item.querySelector(".preco-org") !== null;
+        if (estaPromocao){
+            item.style.display = "block"
+        } else{
+            item.style.display = "none"
+        }
+    })
+}
+function produtosMaisComprados(){
+    let itens = document.querySelectorAll(".itens")
+    itens.forEach(item =>{
+        let estaPromocao = item.querySelector(".maisComprados") !== null;
+        if (estaPromocao){
+            item.style.display = "block"
+        } else{
+            item.style.display = "none"
+        }
+    })
+}
+function custoBeneficio(){
+let itens = document.querySelectorAll(".itens")
+    itens.forEach(item =>{
+        let estaPromocao = item.querySelector(".custoBenficio") !== null;
+        if (estaPromocao){
+            item.style.display = "block"
+        } else{
+            item.style.display = "none"
+        }
+    })
+}
+function menorPreco(){
+    let itens = document.querySelectorAll(".itens")
+    for (let p = 0; p <itens.length ; p++){
+        let preco= itens[p].querySelector(".price").textContent
+        let numberPrice = parseFloat(preco.replace(",", ".").trim())
+        if (numberPrice < 1000){
+            itens[p].style.display = "block"
+        } else {
+            itens[p].style.display = "none"
+        }
+    }
+}
