@@ -92,7 +92,7 @@
         margin-left: 20px;
         font-size: 50px;
         writing-mode: vertical-rl;
-        text-orientation: upright   ;
+        text-orientation: upright;
     }
 }
 @media screen and (min-width:1400px) and (max-width:1900px) {
@@ -112,5 +112,45 @@
     }
     .merchan{
         margin-left: 600px;
+    }
+}@media screen and (min-width:2001px) and (max-width:2600px){
+    .avs{
+        margin-left: 300px;
+    }
+    .merchan{
+        margin-left: 500px;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: -10px;
+    }
+    #comp{
+        font-size: 550px;
+    }
+    #empresa{
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-size: 100px;
+        margin-top: 20px;
+    }
+
+}
+@media screen and (min-width:2601px) and (max-width:3900px){
+    .avs{
+        margin-left: 1000px;
+    }
+    .merchan{
+        margin-left: 600px;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: -10px;
+    }
+    #comp{
+        font-size: 550px;
+    }
+    #empresa{
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-size: 100px;
+        margin-top: 20px;
     }
 }

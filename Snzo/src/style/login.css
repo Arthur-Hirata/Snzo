@@ -289,3 +289,45 @@ input:checked[type="checkbox"]::before{
     margin-top: 50px;
     }
 }
+@media screen and (min-width:1901px) and (max-width:3900px) {
+    .box{
+        width: 900px;
+        height: 650px;
+    }
+    .inputs{
+        margin-left: 60px;
+    }
+    .subtit{
+        font-size: 40px;
+    }
+    input[type="text"], input[type="password"]{
+        width: 400px;
+        height: 40px;
+        font-size: 25px;
+    }
+    #senha-tit{
+        font-size: 40px;
+    }
+    .merchan{
+        margin-left: 150px;
+    }
+    #eye{
+        margin-top: -50px;
+        font-size: 25px;
+        margin-left: 390px;
+        position: absolute;
+    }
+    .lembrar{
+        margin-left: 140px;
+    }
+    .criar{
+        position: absolute;
+        margin-left: 70px;
+    }
+    .entrar{
+        width: 400px;
+        height: 60px;
+        margin-left: 200px;
+        margin-top: 70px;
+    }
+}

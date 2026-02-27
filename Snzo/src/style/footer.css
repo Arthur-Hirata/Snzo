@@ -121,3 +121,19 @@ footer{
         margin-left: 700px;
     }
 }
+@media screen and (min-width:2001px) and (max-width:2600px) {
+    #logo-final{
+        margin-left: 800px;
+    }
+    .criador{
+        margin-left: 1000px;
+    }
+}
+@media screen and (min-width:2601px) and (max-width:3900px){
+    #logo-final{
+        margin-left: 1450px;
+    }
+    .criador{
+        margin-left: 1500px;
+    }
+}

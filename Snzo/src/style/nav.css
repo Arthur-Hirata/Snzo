@@ -153,7 +153,7 @@ li{
     width: 140px;
     background-color: black;
     color: white;
-    margin-left: 50px;
+    margin-left: 45px;
     margin-top: 10px;
     border-radius: 10px;
 }
@@ -177,11 +177,11 @@ li{
 }
 #lista-caixa{
     display: none;
-    margin-left: -120px;
+    margin-left: -140px;
 }
 #lista{
     display: none;
-    margin-left: -40px;
+    margin-left: -70px;
 }
 button{
     padding-top: -10px ;
@@ -418,10 +418,32 @@ button:hover{
     #lista-caixa{
         margin-left: -80px;
     }
-    #lista{
-        margin-left: -10px;
+    #btn-carrinho{
+        margin-left: 50px;
     }
-    
+    #lista{
+        margin-left: -120px;
+    }
+    #btn-favorito{
+        margin-left: -50px;
+    }
+    @media screen and (min-width:800px) and (max-width:815px) {
+        #btn-carrinho{
+            margin-left: 45px;
+        }
+        #lista-caixa{
+        margin-left: -85px;
+    }
+        #btn-favorito{
+            margin-left: -60px;
+        }
+        #lista{
+        margin-left: -130px;
+    }
+    .login{
+        margin-left: -20px;
+    }
+    }
 }
 @media screen and (min-width:750px) and (max-width:799px){
     #pesquisa{
@@ -438,6 +460,7 @@ button:hover{
     .aux{
         margin-left: 250px;
     }
+    
 }
 @media screen and (min-width:1901px) and (max-width:2000px) {
     #pesquisa{
@@ -446,5 +469,23 @@ button:hover{
     }
     .aux{
         margin-left: 333px;
+    }
+}
+/*  QUAD HD */
+@media screen and (min-width:2001px) and (max-width:2600px) {
+    #pesquisa{
+        margin-left: 900px;
+    }
+    .aux{
+        margin-left: 800px;
+    }
+}
+/* 4K */
+@media screen and (min-width:2601px) and (max-width:3900px) {
+    #pesquisa{
+        margin-left: 1560px;
+    }
+    .aux{
+        margin-left: 1300px;
     }
 }

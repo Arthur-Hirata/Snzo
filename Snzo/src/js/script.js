@@ -1,6 +1,6 @@
 $(document).ready(function(){
      ScrollReveal().reveal('.pc', {
-        origin: 'left',
+        origin: 'bottom',
         duration: 1500,
         distance: '20%'
     });
@@ -11,13 +11,13 @@ $(document).ready(function(){
         distance: '20%'
      }) */
      ScrollReveal().reveal('.comentarios', {
-        origin : 'left',
+        origin : 'bottom',
         duration : 2000,
         distance : '20%'
 
      })
      ScrollReveal().reveal('.merchan', {
-        origin : 'rigth',
+        origin : 'bottom',
         duration : 2000,
         distance : '30%'
 
@@ -213,9 +213,9 @@ function adicionarCarrinho(){
                 li.appendChild(btnadc)
                 li.appendChild(quantidade)
                 remover.addEventListener("click", function(){
-                    if (quantidade > 1){
+                    if (i > 1){
                         i--
-                        quantidade = i + "x"
+                        quantidade.textContent = i + "x"
                         ValorCompras -= preçoUnitario;
                         displayTotal.textContent = `Total: ${ValorCompras.toLocaleString('pt-br',{style: 'currency', currency : 'BRL'})}`
                     } else {
@@ -360,228 +360,147 @@ function limparLista(){
     })
 }
 
-var botaoRam= document.getElementById("ram")
-var botaoTudo = document.getElementById('tudo')
-var botaoCpu=document.getElementById('cpu')
-var botaoGpu = document.getElementById('gpu')
-var botaoArmazenamento = document.getElementById('ssd')
-var botaoGabinete = document.getElementById('gabinetes')
-var botaoplacaMae = document.getElementById('mthboard')
+var btntudo = document.getElementById("tudo")
+var btngpu = document.getElementById("gpu")
+var btnram = document.getElementById("ram")
+var btncpu = document.getElementById("cpu")
+var btnplacaMae = document.getElementById("mthboard")
+var btnarmazenamento = document.getElementById("ssd")
+var btngabinete = document.getElementById("gabinetes")
 
-var gtx1650 = document.getElementById("gtx1650")
-var gtx1660 = document.getElementById("gtx1660")
-var rtx2080 = document.getElementById("rtx2080")
-var ram1 = document.getElementById("ram1")
-var ram2 =document.getElementById("ram2")
-var ram3 = document.getElementById("ram3")
-var cpu1 = document.getElementById("cpu1")
-var cpu2 = document.getElementById("cpu2")
-var cpu3 = document.getElementById("cpu3")
-var placa1 = document.getElementById("placa1")
-var placa2 = document.getElementById("placa2")
-var placa3 = document.getElementById("placa3")
-var ssd1 = document.getElementById("arm1")
-var ssd2 = document.getElementById("arm2")
-var ssd3 = document.getElementById("arm3")
-var gab1 = document.getElementById("gab1")
-var gab2 = document.getElementById("gab2")
-var gab3 = document.getElementById("gab3")
+btntudo.addEventListener("click", function(){
+    this.className = "clicado"
+    btngpu.classList = 'nao-clicado'
+    btnram.classList = 'nao-clicado'
+    btncpu.className = "nao-clicado"
+    btngabinete.classList = 'nao-clicado'
+    btnarmazenamento.classList = 'nao-clicado'
+    btnplacaMae.classList = 'nao-clicado'
 
-botaoTudo.addEventListener("click", function (){
-    this.className = "clicado"
-    botaoRam.classList = 'nao-clicado'
-    botaoGpu.classList = 'nao-clicado'
-    botaoCpu.className = "nao-clicado"
-    botaoGabinete.classList = 'nao-clicado'
-    botaoArmazenamento.classList = 'nao-clicado'
-    botaoplacaMae.classList = 'nao-clicado'
-    gtx1650.style.display = "block"
-    gtx1660.style.display= "block"
-    rtx2080.style.display = "block"
-    ram1.style.display = "block"
-    ram2.style.display ="block"
-    ram3.style.display = "block"
-    placa1.style.display ="block"
-    placa2.style.display ="block"
-    placa3.style.display ="block"
-    ssd1.style.display ="block"
-    ssd2.style.display ="block"
-    ssd3.style.display ="block"
-    gab1.style.display ="block"
-    gab2.style.display ="block"
-    gab3.style.display ="block"
-})
-botaoRam.addEventListener("click", function(){
-    this.className = "clicado"
-    botaoTudo.classList = 'nao-clicado'
-    botaoGpu.classList = 'nao-clicado'
-    botaoCpu.className = "nao-clicado"
-    botaoGabinete.classList = 'nao-clicado'
-    botaoArmazenamento.classList = 'nao-clicado'
-    botaoplacaMae.classList = 'nao-clicado'
-    gtx1650.style.display = "none"
-    gtx1660.style.display= "none"
-    rtx2080.style.display = "none"
-    ram1.style.display = "block"
-    ram2.style.display ="block"
-    ram3.style.display = "block"
-    cpu1.style.display =" none"
-    cpu2.style.display =" none"
-    cpu3.style.display =" none"
-    cpu1.style.display =" none"
-    cpu2.style.display =" none"
-    cpu3.style.display =" none"
-    placa1.style.display ="none"
-    placa2.style.display ="none"
-    placa3.style.display ="none"
-    ssd1.style.display ="none"
-    ssd2.style.display ="none"
-    ssd3.style.display ="none"
-    gab1.style.display ="none"
-    gab2.style.display ="none"
-    gab3.style.display ="none"
-})
-botaoCpu.addEventListener("click", function(){
-    this.className = "clicado"
-    botaoRam.classList = 'nao-clicado'
-    botaoGpu.classList = 'nao-clicado'
-    botaoTudo.className = "nao-clicado"
-    botaoGabinete.classList = 'nao-clicado'
-    botaoArmazenamento.classList = 'nao-clicado'
-    botaoplacaMae.classList = 'nao-clicado'
-    gtx1650.style.display = "none"
-    gtx1660.style.display= "none"
-    rtx2080.style.display = "none"
-    ram1.style.display = "none"
-    ram2.style.display ="none"
-    ram3.style.display = "none"
-    cpu1.style.display =" block"
-    cpu2.style.display =" block"
-    cpu3.style.display =" block"
-    placa1.style.display ="none"
-    placa2.style.display ="none"
-    placa3.style.display ="none"
-    ssd1.style.display ="none"
-    ssd2.style.display ="none"
-    ssd3.style.display ="none"
-    gab1.style.display ="none"
-    gab2.style.display ="none"
-    gab3.style.display ="none"
+    let itens = document.querySelectorAll(".itens")
+
+    itens.forEach(item =>{
+        item.style.display = "block"
+    })
 
 })
-botaoGpu.addEventListener("click", function(){
+btngpu.addEventListener("click", function(){
     this.className = "clicado"
-    botaoRam.classList = 'nao-clicado'
-    botaoTudo.classList = 'nao-clicado'
-    botaoCpu.className = "nao-clicado"
-    botaoGabinete.classList = 'nao-clicado'
-    botaoArmazenamento.classList = 'nao-clicado'
-    botaoplacaMae.classList = 'nao-clicado'
-    gtx1650.style.display = "block"
-    gtx1660.style.display= "block"
-    rtx2080.style.display = "block"
-    ram1.style.display= "none"
-    ram2.style.display ="none"
-    ram3.style.display = "none"
-    cpu1.style.display =" none"
-    cpu2.style.display =" none"
-    cpu3.style.display =" none"
-    placa1.style.display ="none"
-    placa2.style.display ="none"
-    placa3.style.display ="none"
-    ssd1.style.display ="none"
-    ssd2.style.display ="none"
-    ssd3.style.display ="none"
-    gab1.style.display ="none"
-    gab2.style.display ="none"
-    gab3.style.display ="none"
+    btntudo.classList = 'nao-clicado'
+    btnram.classList = 'nao-clicado'
+    btncpu.className = "nao-clicado"
+    btngabinete.classList = 'nao-clicado'
+    btnarmazenamento.classList = 'nao-clicado'
+    btnplacaMae.classList = 'nao-clicado'
 
+    let itens = document.querySelectorAll(".itens")
+
+    itens.forEach(item =>{
+        let gpu= item.querySelector(".gpu") !== null;
+        if (gpu){
+            item.style.display = "block"
+        } else {
+            item.style.display = "none"
+        }
+    })
 })
-botaoplacaMae.addEventListener("click", function(){
+btnram.addEventListener("click", function(){
     this.className = "clicado"
-    botaoRam.classList = 'nao-clicado'
-    botaoGpu.classList = 'nao-clicado'
-    botaoCpu.className = "nao-clicado"
-    botaoGabinete.classList = 'nao-clicado'
-    botaoArmazenamento.classList = 'nao-clicado'
-    botaoTudo.classList = 'nao-clicado'
-    gtx1650.style.display = "none"
-    gtx1660.style.display= "none"
-    rtx2080.style.display = "none"
-    ram1.style.display = "none"
-    ram2.style.display ="none"
-    ram3.style.display = "none"
-    cpu1.style.display =" none"
-    cpu2.style.display =" none"
-    cpu3.style.display =" none"
-    placa1.style.display ="block"
-    placa2.style.display ="block"
-    placa3.style.display ="block"
-    ssd1.style.display ="none"
-    ssd2.style.display ="none"
-    ssd3.style.display ="none"
-    gab1.style.display ="none"
-    gab2.style.display ="none"
-    gab3.style.display ="none"
+    btntudo.classList = 'nao-clicado'
+    btngpu.classList = 'nao-clicado'
+    btncpu.className = "nao-clicado"
+    btngabinete.classList = 'nao-clicado'
+    btnarmazenamento.classList = 'nao-clicado'
+    btnplacaMae.classList = 'nao-clicado'
 
+    let itens = document.querySelectorAll(".itens")
+
+    itens.forEach(item =>{
+        let gpu= item.querySelector(".ram") !== null;
+        if (gpu){
+            item.style.display = "block"
+        } else {
+            item.style.display = "none"
+        }
+    })
 })
-botaoArmazenamento.addEventListener("click", function(){
+btncpu.addEventListener("click", function(){
     this.className = "clicado"
-    botaoRam.classList = 'nao-clicado'
-    botaoGpu.classList = 'nao-clicado'
-    botaoCpu.className = "nao-clicado"
-    botaoGabinete.classList = 'nao-clicado'
-    botaoTudo.classList = 'nao-clicado'
-    botaoplacaMae.classList = 'nao-clicado'
-    gtx1650.style.display = "none"
-    gtx1660.style.display= "none"
-    rtx2080.style.display = "none"
-    ram1.style.display = "none"
-    ram2.style.display ="none"
-    ram3.style.display = "none"
-    cpu1.style.display =" none"
-    cpu2.style.display =" none"
-    cpu3.style.display =" none"
-    placa1.style.display ="none"
-    placa2.style.display ="none"
-    placa3.style.display ="none"
-    ssd1.style.display ="block"
-    ssd2.style.display ="block"
-    ssd3.style.display ="block"
-    gab1.style.display ="none"
-    gab2.style.display ="none"
-    gab3.style.display ="none"
+    btntudo.classList = 'nao-clicado'
+    btngpu.classList = 'nao-clicado'
+    btnram.className = "nao-clicado"
+    btngabinete.classList = 'nao-clicado'
+    btnarmazenamento.classList = 'nao-clicado'
+    btnplacaMae.classList = 'nao-clicado'
 
+    let itens = document.querySelectorAll(".itens")
+
+    itens.forEach(item =>{
+        let gpu= item.querySelector(".cpu") !== null;
+        if (gpu){
+            item.style.display = "block"
+        } else {
+            item.style.display = "none"
+        }
+    })
 })
-botaoGabinete.addEventListener("click", function(){
+btnplacaMae.addEventListener("click", function(){
     this.className = "clicado"
-    botaoRam.classList = 'nao-clicado'
-    botaoGpu.classList = 'nao-clicado'
-    botaoCpu.className = "nao-clicado"
-    botaoTudo.classList = 'nao-clicado'
-    botaoArmazenamento.classList = 'nao-clicado'
-    botaoplacaMae.classList = 'nao-clicado'
-    gtx1650.style.display = "none"
-    gtx1660.style.display= "none"
-    rtx2080.style.display = "none"
-    ram1.style.display = "none"
-    ram2.style.display ="none"
-    ram3.style.display = "none"
-    cpu1.style.display =" none"
-    cpu2.style.display =" none"
-    cpu3.style.display =" none"
-    placa1.style.display ="none"
-    placa2.style.display ="none"
-    placa3.style.display ="none"
-    ssd1.style.display ="none"
-    ssd2.style.display ="none"
-    ssd3.style.display ="none"
-    gab1.style.display ="block"
-    gab2.style.display ="block"
-    gab3.style.display ="block"
+    btntudo.classList = 'nao-clicado'
+    btngpu.classList = 'nao-clicado'
+    btnram.className = "nao-clicado"
+    btngabinete.classList = 'nao-clicado'
+    btnarmazenamento.classList = 'nao-clicado'
+    btncpu.classList = 'nao-clicado'
+    let itens = document.querySelectorAll(".itens")
 
+    itens.forEach(item =>{
+        let gpu= item.querySelector(".placa-mae") !== null;
+        if (gpu){
+            item.style.display = "block"
+        } else {
+            item.style.display = "none"
+        }
+    })
 })
+btnarmazenamento.addEventListener("click", function(){
+    this.className = "clicado"
+    btntudo.classList = 'nao-clicado'
+    btngpu.classList = 'nao-clicado'
+    btnram.className = "nao-clicado"
+    btngabinete.classList = 'nao-clicado'
+    btnplacaMae.classList = 'nao-clicado'
+    btncpu.classList = 'nao-clicado'
 
+    let itens = document.querySelectorAll(".itens")
+    itens.forEach(item =>{
+        let gpu= item.querySelector(".armazenamento") !== null;
+        if (gpu){
+            item.style.display = "block"
+        } else {
+            item.style.display = "none"
+        }
+    })
+})
+btngabinete.addEventListener("click", function(){
+    this.className = "clicado"
+    btntudo.classList = 'nao-clicado'
+    btngpu.classList = 'nao-clicado'
+    btnram.className = "nao-clicado"
+    btnarmazenamento.classList = 'nao-clicado'
+    btnplacaMae.classList = 'nao-clicado'
+    btncpu.classList = 'nao-clicado'
+
+    let itens = document.querySelectorAll(".itens")
+    itens.forEach(item =>{
+        let gpu= item.querySelector(".gabinetes") !== null;
+        if (gpu){
+            item.style.display = "block"
+        } else {
+            item.style.display = "none"
+        }
+    })
+})
 function buscarProduto(){
     const inputpesquisa = document.getElementById("input-pesquisa").value.toLowerCase();
     let itens = document.getElementsByClassName('itens')

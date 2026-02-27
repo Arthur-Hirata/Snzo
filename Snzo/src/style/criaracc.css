@@ -185,4 +185,28 @@ button:hover{
         width: 210px;
     }
 }
+@media screen and (min-width:1901px) and (max-width:3900px) {
+    .box{
+        width: 700px;
+    }
+    input[type="text"],input[type="password"]{
+        width: 400px;
+        font-size: 25px;
+        height: 30px;
+    }
+    #olho{
+        font-size: 20px;
+        margin-left: -50px;
+    }
+    #olho2{
+       font-size: 20px;
+        margin-left: -50px; 
+    }
 
+    .btn-logar{
+        margin-left: 90px;
+    }
+    .btn-criar{
+        margin-left: 200px;
+    }
+}
