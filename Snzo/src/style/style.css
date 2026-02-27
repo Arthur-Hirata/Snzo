@@ -275,7 +275,10 @@
 @media screen and (min-width:1900px) and (max-width:2000px) {
     .promocao{
         justify-content: center;
-        margin-left: 226px;
+        margin-left: 430px;
         user-select: none;
+    }
+    .promo{
+        margin-left: 280px;
     }
 }

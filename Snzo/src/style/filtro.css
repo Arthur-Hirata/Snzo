@@ -538,7 +538,7 @@
 }
 @media screen and (min-width:1901px) and (max-width:2000px){
     #box{
-        margin: 0 auto;
+        margin-left: 356px;
         
         
     }

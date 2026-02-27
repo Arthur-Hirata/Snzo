@@ -106,3 +106,11 @@
         margin-left: 250px;
     }
 }
+@media screen and (min-width:1901px) and (max-width:2000px) {
+    .avs{
+        margin-left: 100px;
+    }
+    .merchan{
+        margin-left: 600px;
+    }
+}
